@@ -20,6 +20,17 @@ module.exports = app => {
         });
     })
 
+    app.get("/delete/:id_client", (req,res) => {
+        const id_client = req.params.id_client;
+        connection.query("DELETE FROM tb_clients WHERE id_client = ?", [id_client], (err,result) => {
+            if (err) {
+                res.send(err);
+            }else {
+                res.redirect("/inicio");
+            }
+        })
+    })
+
     app.get('/login', (req,res) => {
         res.render('../views/login.ejs');
     })
@@ -155,6 +166,7 @@ module.exports = app => {
                 console.log(error);
             } else {
                 res.render("form_cliente", {
+                    position: req.session.position,
                     alert:true,
                     alertTitle: "Registrado",
                     alertMessage: "Registro Exitoso",
@@ -188,6 +200,7 @@ module.exports = app => {
                 console.log(error);
             } else {
                 res.render("form_mascota", {
+                    position: req.session.position,
                     alert:true,
                     alertTitle: "Registrado",
                     alertMessage: "Registro Exitoso",

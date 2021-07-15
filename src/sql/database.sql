@@ -1,3 +1,6 @@
+mysql --host=us-cdbr-east-04.cleardb.com --user=be85f0b2d6047e --reconnect heroku_7bcde4b8b0077b3 -p
+
+
 CREATE DATABASE vetserver;
 
 USE vetserver;

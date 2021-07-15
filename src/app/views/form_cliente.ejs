@@ -12,7 +12,6 @@
 </head>
 
 <body>
-  <% if (position === "administrador" || position === "médico veterinario" || position === "auxiliar veterinario") { %>
   <header class="header">
     <nav class="nav">
       <a href="./inicio" class="nav__items"><i class="fas fa-user"></i>Clientes</a>
@@ -114,9 +113,6 @@
           window.location = '/<%=ruta%>'
         })
     </script>
-    <% } %>
-    <% } else { %>
-      <a href="/">Inicio</a>
     <% } %>
 </body>
 
