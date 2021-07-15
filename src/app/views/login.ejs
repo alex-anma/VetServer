@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogIn</title>
+  <link rel="stylesheet" href="/resources/css/estiloslogin.css" />
+  <link rel="stylesheet" href="/resources/css/loginresponsive.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="/"><img src="/resources/images/Villa Paula1.png" alt="Villa Paula" /></a>
+    </div>
+  </header>
+  <main class="main">
+    <div class="logIn-box">
+      <h1>Iniciar sesión</h1>
+      <form action="/login" id="formulario" method="POST">
+        <div class="text_field">
+          <input name="user" type="text" required />
+          <span></span>
+          <label for="text">Usuario</label>
+        </div>
+        <div class="text_field">
+          <input name="pass" type="password" required />
+          <span></span>
+          <label for="pass">Contraseña</label>
+        </div>
+        <input type="submit" id="boton" value="Ingresar" />
+        <!-- <a href="form_usuario">Registrar</a> -->
+        <div class="forget_password">
+          ¿Olvidaste tu contraseña?
+          <a href="#">Click aquí</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  <% if (typeof alert !="undefined" ) { %>
+    <script>
+      Swal.fire({
+        title: '<%= alertTitle %>',
+        text: '<%= alertMessage %>',
+        icon: '<%= alertIcon %>',
+        showConfirmButton: '<%= showConfirmButton %>', 
+        timer: <%= timer %>
+    }).then(() => {
+          window.location = '/<%= ruta %>'
+        })
+    </script>
+    <% } %>
+</body>
+
+</html>
+Copyright © Laura Aristizabal - Luis Ramos - David Marín

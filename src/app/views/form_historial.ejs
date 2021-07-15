@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial Clínico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/resources/css/estilosforms.css" />
+</head>
+
+<body>
+  <% if (position === "administrador" || position === "médico veterinario" || position === "auxiliar veterinario") { %>
+  <header class="header">
+    <nav class="nav">
+      <a href="./inicio" class="nav__items"><i class="fas fa-user"></i>Cliente</a>
+      <a href="./form_cliente" class="nav__items"><i class="fas fa-paw"></i>Mascotas</a>
+      <!-- <a href="./form_historial.html" class="nav__items"><i class="fas fa-dollar-sign"></i>Tienda</a> -->
+      <% if (position === "administrador") { %>
+      <a href="./form_usuario" class="nav__items"><i class="fas fa-user-plus add"></i>Añadir Usuario</a>
+      <% } %>
+      <a href="./logout" class="nav__items"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="title">Historia Clínica</div>
+    <form action="form_historial.ejs" method="POST">
+      <div class="user-details">
+
+        <div class="input-box">
+          <span class="details" for="date">Fecha</span>
+          <input name="date" type="date" required id="start" name="trip-start" min="1965-01-01" max="2021-12-31" />
+          <span></span>
+
+        </div>
+
+        <div class="input-box">
+          <span class="details">Motivo de visita</span>
+          <select class="select" name="visit" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">Nueva consulta</option>
+            <option value="2">Control</option>
+            <option value="3">Cita especialista</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Anamnesis</span>
+          <input type="text" name="anam" placeholder="" required />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Enfermemdades previas</span>
+          <input type="text" name="enfprev" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Tratamientos recientes</span>
+          <input type="text" name="tratrec" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Cirugías</span>
+          <input type="text" name="cirugias" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Dieta y frecuencia</span>
+          <input type="text" name="dieta" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Comportamiento</span>
+          <input type="text" name="comportamiento" placeholder="" />
+        </div>
+
+        <div class="title">Examen Físico General</div>
+        <div class="input-box">
+          <span class="details"></span>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Peso (kg)</span>
+          <input type="text" name="peso" placeholder="Kg" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Temperatura (ºC)</span>
+          <input type="text" name="temp" placeholder="ºC" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Frecuencia cardíaca (LPM/min)</span>
+          <input type="text" name="freccard" placeholder="LPM/min" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Frecuencia respiratoria (RPM/min)</span>
+          <input type="text" name="frecresp" placeholder="RPM/min" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Tiempo llenado Capilar (TLLC/seg)</span>
+          <input type="text" name="tllc" placeholder="TLLC/seg" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Pliegue cutaneo (seg)</span>
+          <input type="text" name="cutaneo" placeholder="seg" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Deshidratación (%)</span>
+          <input type="text" name="deshidratación" placeholder="%" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Reflejo Tusígeno</span>
+          <input type="text" name="tusigeno" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Pulso</span>
+          <input type="text" name="pulso" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Mucosas</span>
+          <input type="text" name="mucosas" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Condición Corporal (1-9)</span>
+          <input type="text" name="condicion" placeholder="1-9" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Ganglios superficiales</span>
+          <select class="select" name="ganglios" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">Reactivos</option>
+            <option value="2">No reactivos</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Palmo percusión</span>
+          <input type="text" name="percusion" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details"></span>
+        </div>
+        <div class="title">Examen Físico Especial</div>
+        <div class="input-box">
+          <span class="details"></span>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Hidratación</span>
+          <select class="select" name="hidratacion2" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Estado nutricional</span>
+          <select class="select" name="estanutri" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Ganglios superficiales</span>
+          <select class="select" name="ganglios2" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Actitud</span>
+          <select class="select" name="actitud" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obseractitud" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Ojos</span>
+          <select class="select" name="ojos" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obserojos" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Oídos</span>
+          <select class="select" name="oidos" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obseroidos" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Sist. Digestivo</span>
+          <select class="select" name="sistdig" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obserdig" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Sist. Cardiovascular</span>
+          <select class="select" name="sistcard" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obsercard" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Sist. Respiratorio</span>
+          <select class="select" name="sistresp" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obserresp" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Sist. Urinario</span>
+          <select class="select" name="sistur" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obserur" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Sist. Reproductivo</span>
+          <select class="select" name="sistrepr" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obserrepr" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Sist. Musculoesqulético</span>
+          <select class="select" name="sistmusc" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obsermusc" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Sist. Nervioso</span>
+          <select class="select" name="sistnerv" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obsernerv" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Piel y anexos</span>
+          <select class="select" name="piel" aria-label="Default select example">
+            <option selected>Seleccione una opción</option>
+            <option value="1">N</option>
+            <option value="2">A</option>
+          </select>
+          <input type="text" name="obserpiel" placeholder="Observaciones" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Detalles Examen</span>
+          <input type="text" name="detallesex" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Diagnósticos presuntivos</span>
+          <input type="text" name="diagnosticopresun" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Diagnósticos diferenciales</span>
+          <input type="text" name="diagnosticodif" placeholder="" />
+        </div>
+
+        <div class="input-box">
+          <span class="details">Plan diagnóstico</span>
+          <input type="text" name="plan" placeholder="" />
+        </div>
+
+        <!-- Formulario Tratamiento -->
+
+        <div class="title">Tratamiento</div>
+        <div class="input-box">
+          <span class="details"></span>
+        </div>
+
+        <div class="input-box">
+          <span class="details">Tratamiento</span>
+          <input type="text" name="tratamiento" placeholder="Medicamento/Dosis/Vía/Frec/Duración" />
+        </div>
+
+        <div class="input-box">
+          <span class="details"></span>
+        </div>
+
+        <input class="buttonm" type="submit" id="buttonm" value="Guardar" />
+
+      </div>
+    </form>
+  </div>
+  <script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
+  <% } else { %>
+    <a href="/">Inicio</a>
+  <% } %>
+</body>
+
+</html>

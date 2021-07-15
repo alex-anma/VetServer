@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap');
+
+body {
+	margin: 40px;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+	background-image: url("/resources/images/pets2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	overflow: hidden;
+}
+
+header {
+	display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 10px 50px 10px;
+}
+
+.main {
+	display: flex;
+    justify-content: start;
+}
+
+.logo {
+	cursor: pointer;
+}
+
+.logIn-box {
+	bottom: 14%;
+	left: 4%;
+	background-color: rgba(255, 255, 255);
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2)
+}
+
+.logIn-box h1 {
+	text-align: center;
+	padding: 0 0 20px 0;
+	color: #00A54F
+}
+
+.logIn-box form {
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+
+form .text_field {
+	position: relative;
+	border-bottom: 2px solid #00A54F;
+	margin: 30px 0;
+}
+
+.text_field input {
+	width: 100%;
+	padding: 0 5px;
+	height: 40px;
+	font-size: 16px;
+	border: none;
+	background: none;
+	outline: none;
+}
+
+.text_field label{
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	color: #adadad;
+	transform: translateY(-50%);
+	font-size: 16px;
+	pointer-events: none;
+	transition: .3s;
+}
+
+.text_field span::before {
+	content: '';
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 0%;
+	height: 2px;
+	background: #9DE246;
+	transition: .3s;
+}
+
+.text_field input:focus ~ label,
+.text_field input:valid ~ label {
+	top: -5px;
+	color: #467302;
+}
+
+.text_field input:focus ~ span::before,
+.text_field input:valid ~ span::before {
+	width: 100%; 
+}
+
+input[type="submit"] {
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+	font-size: 16px;
+	display: inline-block;
+    background: #00A54F;
+    padding: 15px 34px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+}
+
+input[type="submit"]:hover {
+	background: #9DE246;
+	transition: .5s;
+}
+
+.forget_password {
+	margin: 30px 0;
+	text-align: center;
+	font-size: 16px;
+	color: rgb(82, 82, 82);
+}
+
+.forget_password a {
+	color: #F29F05;
+	text-decoration: none; 
+}
+
+.forget_password a:hover {
+	text-decoration: underline;
+}
+
+/* Sweet Alert */
+.swal2-styled.swal2-confirm {
+	border-radius: 50px !important;
+    background-color: #00A54F !important;
+}
+
+.swal2-styled:focus {
+	box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%) !important;
+}

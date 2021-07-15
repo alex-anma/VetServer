@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pagina Web</title>
+	<link rel="stylesheet" href="/resources/css/normalize.css">
+	<link rel="stylesheet" href="/resources/css/estilos.css">
+	<link rel="stylesheet" href="/resources/css/indexresponsive.css">
+</head>
+
+<body>
+	<header class="hero">
+		<div class="respmenu">
+			<input type="checkbox">
+			<i class="fas fa-bars"></i>
+			<i class="fas fa-times"></i>
+			<nav>
+				<a href="#" class="nav__items"><i class="home"></i>Inicio</a>
+				<a href="#services" class="nav__items"><i class="services"></i>Servicios</a>
+				<a href="#contacto" class="nav__items"><i class="contactanos"></i>Contáctanos</a>
+				<a href="/login" class="nav__items nav__items--cta">Ingreso Veterinarios</a>
+			</nav>
+		</div>
+		<div class="contact">
+			<a href="#" class="contact__items"><i class="fas fa-clock"></i>Horario de atención: Lunes A Sábado 08:00 -
+				19:00</a>
+			<a href="#" class="contact__items"><i class="fas fa-phone"></i>Teléfono: 2811209</a>
+			<a href="mailto:alex-anma@hotmail.com?Subject=Aquí%20el%20asunto%20del%20mail" class="contact__items"><i
+					class="fas fa-envelope"></i>Email</a>
+		</div>
+		<nav class="nav">
+			<a href="#" class="logo"><img src="/resources/images/Villa Paula1.png" alt="VillaPaula"></a>
+			<a href="#" class="nav__items"><i class="home"></i>Inicio</a>
+			<a href="#services" class="nav__items"><i class="services"></i>Servicios</a>
+			<a href="#footer" class="nav__items"><i class="contactanos"></i>Contáctanos</a>
+			<a href="/login" class="nav__items nav__items--cta">Ingreso Veterinarios</a>
+		</nav>
+		<div class="container">
+			<!--contenedor para dar margen y no sobrepasar-->
+			<section class="hero__container">
+				<div class="hero__texts">
+					<h1 class="hero__title">Bienvenidos al Centro Veterinaria Villa Paula</h1>
+					<h2 class="hero__subtitle">Centro Veterinaria Villa Paula, es una clínica veterinaria dedicada a
+						ofrecer atención con calidad para los consentidos de casa: las mascotas.</h2>
+					<a href="#nosotros" class="hero__cta">Conoce más</a>
+				</div>
+			</section>
+		</div>
+	</header>
+
+	<main>
+		<!--contenido principal de la pagina-->
+		<section class="lose">
+			<div class="container">
+				<h2 id="services" class="subtitle">Servicios</h2>
+				<div class="lose__grid">
+					<article class="lose__items">
+						<img src="/resources/images/Veterinaria2.jpg" alt="servicio1" class="lose__img">
+						<div class="lose__hover">
+							<h2 class="lose__title">Consultas</h2>
+							<p>Contamos con personal capacitado, idóneo y con experiencia en campo de consultas médicas
+								para mascotas; con equipamiento adecuado para brindarles una atención adecuada y puedas
+								estar seguro de que dejas a tu mascota en las mejores manos.</p>
+						</div>
+						<h2 class="lose__title title2">Consultas</h2>
+					</article>
+
+					<article class="lose__items">
+						<img src="/resources/images/Cirugia2.jpg" alt="servicio2" class="lose__img">
+						<div class="lose__hover">
+							<h2 class="lose__title">Cirugía</h2>
+							<p>Se realizan todo tipo de cirugía a caninos y felinos, dependiendo de cada una de las
+								especialidades; contamos con todos los implementos necesarios para realizar
+								intervenciones quirúrgicas.</p>
+						</div>
+						<h2 class="lose__title title2">Cirugía</h2>
+					</article>
+
+					<article class="lose__items">
+						<img src="/resources/images/Peluqueria2.jpg" alt="servicio3" class="lose__img">
+						<div class="lose__hover">
+							<h2 class="lose__title">Peluquería</h2>
+							<p>Ofrecemos nuestros servicios de estética como peluquería, limpieza de oidos, baño, baño
+								medicado, masajes con shampoo, acondicionador y corte de uñas.</p>
+						</div>
+						<h2 class="lose__title title2">Peluquería</h2>
+					</article>
+
+					<article class="lose__items">
+						<img src="/resources/images/Domicilios2.jpg" alt="servicio4" class="lose__img">
+						<div class="lose__hover">
+							<h2 class="lose__title">Domicilios</h2>
+							<p>Ofrecemos servicios a domicilio en el área de Itagüi, entregamos los productos que
+								requieras hasta la puerta de tu casa y en caso de que requieras se recoge a tu mascota
+								para el servicio que solicites.</p>
+						</div>
+						<h2 class="lose__title title2">Domicilios</h2>
+					</article>
+
+					<article class="lose__items">
+						<img src="/resources/images/Hospitalizacion2.jpg" alt="servicio4" class="lose__img">
+						<div class="lose__hover">
+							<h2 class="lose__title">Hospitalizacion diurna</h2>
+							<p>Brindamos el servicio de hospitalización diurna para tratamientos intermitentes en caso
+								de que se requiera tratamiento especializado se realiza remisión del paciente.</p>
+						</div>
+						<h2 class="lose__title title2">Hospitalización diurna</h2>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="nosotros" class="we container">
+			<h2 class="subtitle">¿Quiénes somos?</h2>
+			<div class="we__grid">
+				<article class="we__item">
+					<div class="we__description">
+						<img src="/resources/images/Villa Paula1.png" alt="villaPaula" class="we__img">
+						<div class="we__text">
+							<h3 class="we__name">Villa Paula Veterinaria</h3>
+							<p class="we__text">Somos una empresa comprometida con el cuidado de las mascotas, brindando
+								servicios de medicina veterinaria, estética como peluquería, venta de medicamentos y
+								servicio a domicilio; llevamos más de 20 años en el mercado. Contamos con una amplia
+								experiencia y con un gran interés en sus mascotas, ayudándoles a la necesidad que
+								soliciten con una atención muy acorde a las expectativas de nuestros clientes.</p>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		</section>
+		</div class="social-wpp">
+		<a href="https://wa.link/16wtiu" class="wpp icon-whatsapp" target="_blank">
+			<i class="fab fa-whatsapp"></i>
+		</a>
+		</div>
+	</main>
+	<i class=""></i>
+	<footer id="footer" class="footer">
+		<div class="footer__text container">
+			<div>
+				<h3><b>Contáctenos</b></h3>
+				<p class="footer__contact"><i class="fas fa-clock"></i>Horario de atención: Lunes A Sábado 08:00 -
+					19:00</p>
+				<p class="footer__contact"><i class="fas fa-phone"></i>Teléfono: 2811209</p>
+				<p class="footer__contact"><a
+						href="mailto:alex-anma@hotmail.com?Subject=Aquí%20el%20asunto%20del%20mail"><i
+							class="fas fa-envelope"></i>Email</a></p>
+				<ul class="socials">
+					<li><a class="fab fa-facebook" target="_bank"
+							href="https://www.facebook.com/VillaPaulaVeterinaria/"></a></li>
+					<li><a class="fab fa-instagram" target="_bank"
+							href="https://www.instagram.com/veterinaria.villapaula/"></a></li>
+					<li><a class="fab fa-whatsapp" target="_bank" href="https://wa.link/16wtiu"></a></li>
+				</ul>
+			</div>
+			<div>
+				<h2>Ubícanos</h2>
+				<i class="fas fa-map-marker-alt"></i>
+				<p class="maps">Cra 50 # 55-13 Itagüi - Antioquia</p>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.681956445221!2d-75.60795308590693!3d6.1733189288493815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46823172f9551b%3A0xe18bed4d0605c23b!2sVeterinaria%20Villa%20Paula!5e0!3m2!1ses!2sco!4v1623119758831!5m2!1ses!2sco"
+					width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+	<script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+Copyright © Laura Aristizabal - Luis Ramos - David Marín
