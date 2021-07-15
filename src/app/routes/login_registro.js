@@ -136,12 +136,6 @@ module.exports = app => {
         })
     })
 
-    gulp.src('./dist/*/*.html')
-    .pipe(cachebust({
-        type: 'timestamp'
-    }))
-    .pipe(gulp.dest('./dist'));
-
     //solicitud POST en el formulario clientes
     app.post('/form_cliente', async (req, res) => {
         const {id_client, name, surname, second_surname, birth_date, gender, email, address, tel, cel} = req.body;
