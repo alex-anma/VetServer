@@ -17,9 +17,9 @@
       <a href="./inicio" class="nav__items"><i class="fas fa-user"></i>Clientes</a>
       <a href="./mascotas" class="nav__items"><i class="fas fa-paw"></i>Mascotas</a>
       <!-- <a href="./form_historial.html" class="nav__items"><i class="fas fa-dollar-sign"></i>Tienda</a> -->
-      <% if (position === "administrador") { %>
+			<% if (position === "administrador") { %>
       <a href="./form_usuario" class="nav__items"><i class="fas fa-user-plus add"></i>Añadir Usuario</a>
-      <% } %>
+			<% } %>
       <a href="./logout" class="nav__items"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
     </nav>
   </header>
@@ -32,30 +32,30 @@
           <input type="text" name="id_client" placeholder="Documento identidad" required />
         </div>
         <div class="input-box">
-          <label class="details" for="name">Nombres</label>
-          <input type="text" name="name" placeholder="Nombres" required />
+          <label class="details" for="name_client">Nombres</label>
+          <input type="text" name="name_client" placeholder="Nombres" required />
         </div>
 
         <div class="input-box">
-          <label class="details" for="surname">Primer apellido</label>
-          <input type="text" name="surname" placeholder="Primer apellido" required />
+          <label class="details" for="surname_client">Primer apellido</label>
+          <input type="text" name="surname_client" placeholder="Primer apellido" required />
         </div>
 
         <div class="input-box">
-          <label class="details" for="second_surname">Segundo apellido</label>
-          <input type="text" name="second_surname" placeholder="Segundo apellido" required />
+          <label class="details" for="second_surname_client">Segundo apellido</label>
+          <input type="text" name="second_surname_client" placeholder="Segundo apellido" required />
         </div>
 
         <div class="input-box">
-          <label class="details" for="birth_date">Fecha Nacimiento</label>
-          <input name="birth_date" type="date" required id="start" name="trip-start" min="1965-01-01" max="2021-12-31" />
+          <label class="details" for="birth_date_client">Fecha Nacimiento</label>
+          <input name="birth_date_client" type="date" required id="start" name="trip-start" min="1965-01-01" max="2021-12-31" />
           <span></span>
 
         </div>
 
         <div class="input-box">
-          <label class="details" for="gender">Sexo</label>
-          <select class="select" name="gender" aria-label="Default select example">
+          <label class="details" for="gender_client">Sexo</label>
+          <select class="select" name="gender_client" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="Femenino">Femenino</option>
             <option value="Masculino">Masculino</option>
@@ -83,16 +83,8 @@
           <input type="text" name="cel" placeholder="Celular" required />
         </div>
 
-        <input class="buttonm" type="submit" id="buttonm" value="Agregar Mascota" />
-        <a href="./form_mascota">Mascota</a>
+        <input class="buttonm" type="submit" id="buttonm" value="Registrar y Agregar Mascota" />
 
-        <!-- <input class="buttonc"
-            type="submit"
-            id="buttonm"
-            value="Registar compra"
-          /> -->
-
-        <input class="buttonr" type="submit" id="buttonr" value="Registrar" />
     </form>
   </div>
   </div>

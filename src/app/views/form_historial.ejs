@@ -15,11 +15,11 @@
   <header class="header">
     <nav class="nav">
       <a href="./inicio" class="nav__items"><i class="fas fa-user"></i>Cliente</a>
-      <a href="./form_cliente" class="nav__items"><i class="fas fa-paw"></i>Mascotas</a>
+      <a href="./mascotas" class="nav__items"><i class="fas fa-paw"></i>Mascotas</a>
       <!-- <a href="./form_historial.html" class="nav__items"><i class="fas fa-dollar-sign"></i>Tienda</a> -->
-      <% if (position === "administrador") { %>
+			<% if (position === "administrador") { %>
       <a href="./form_usuario" class="nav__items"><i class="fas fa-user-plus add"></i>Añadir Usuario</a>
-      <% } %>
+			<% } %>
       <a href="./logout" class="nav__items"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
     </nav>
   </header>
@@ -29,114 +29,114 @@
       <div class="user-details">
 
         <div class="input-box">
-          <span class="details" for="date">Fecha</span>
-          <input name="date" type="date" required id="start" name="trip-start" min="1965-01-01" max="2021-12-31" />
+          <label class="details" for="date_clinical_histories">Fecha</label>
+          <input name="date_clinical_histories" type="date" required id="start" name="trip-start" min="1965-01-01" max="2021-12-31" />
           <span></span>
 
         </div>
 
         <div class="input-box">
-          <span class="details">Motivo de visita</span>
-          <select class="select" name="visit" aria-label="Default select example">
+          <label for="visit_pet" class="details">Motivo de visita</label>
+          <select class="select" name="visit_pet" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
-            <option value="1">Nueva consulta</option>
-            <option value="2">Control</option>
-            <option value="3">Cita especialista</option>
+            <option value="Nueva consulta">Nueva consulta</option>
+            <option value="Control">Control</option>
+            <option value="Cita especialista">Cita especialista</option>
           </select>
         </div>
 
         <div class="input-box">
-          <span class="details">Anamnesis</span>
-          <input type="text" name="anam" placeholder="" required />
+          <label for="anamnesis" class="details">Anamnesis</label>
+          <input type="text" name="anamnesis" placeholder="" required />
         </div>
 
         <div class="input-box">
-          <span class="details">Enfermemdades previas</span>
+          <label for="" class="details">Enfermemdades previas</label>
           <input type="text" name="enfprev" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Tratamientos recientes</span>
+          <label for="" class="details">Tratamientos recientes</label>
           <input type="text" name="tratrec" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Cirugías</span>
+          <label for="" class="details">Cirugías</label>
           <input type="text" name="cirugias" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Dieta y frecuencia</span>
+          <label for="" class="details">Dieta y frecuencia</label>
           <input type="text" name="dieta" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Comportamiento</span>
+          <label for="" class="details">Comportamiento</label>
           <input type="text" name="comportamiento" placeholder="" />
         </div>
 
         <div class="title">Examen Físico General</div>
         <div class="input-box">
-          <span class="details"></span>
+          <label for="" class="details"></label>
         </div>
 
         <div class="input-box">
-          <span class="details">Peso (kg)</span>
+          <label for="" class="details">Peso (kg)</label>
           <input type="text" name="peso" placeholder="Kg" />
         </div>
 
         <div class="input-box">
-          <span class="details">Temperatura (ºC)</span>
+          <label for="" class="details">Temperatura (ºC)</label>
           <input type="text" name="temp" placeholder="ºC" />
         </div>
 
         <div class="input-box">
-          <span class="details">Frecuencia cardíaca (LPM/min)</span>
+          <label for="" class="details">Frecuencia cardíaca (LPM/min)</label>
           <input type="text" name="freccard" placeholder="LPM/min" />
         </div>
 
         <div class="input-box">
-          <span class="details">Frecuencia respiratoria (RPM/min)</span>
+          <label for="" class="details">Frecuencia respiratoria (RPM/min)</label>
           <input type="text" name="frecresp" placeholder="RPM/min" />
         </div>
 
         <div class="input-box">
-          <span class="details">Tiempo llenado Capilar (TLLC/seg)</span>
+          <label for="" class="details">Tiempo llenado Capilar (TLLC/seg)</label>
           <input type="text" name="tllc" placeholder="TLLC/seg" />
         </div>
 
         <div class="input-box">
-          <span class="details">Pliegue cutaneo (seg)</span>
+          <label for="" class="details">Pliegue cutaneo (seg)</label>
           <input type="text" name="cutaneo" placeholder="seg" />
         </div>
 
         <div class="input-box">
-          <span class="details">Deshidratación (%)</span>
+          <label for="" class="details">Deshidratación (%)</label>
           <input type="text" name="deshidratación" placeholder="%" />
         </div>
 
         <div class="input-box">
-          <span class="details">Reflejo Tusígeno</span>
+          <label for="" class="details">Reflejo Tusígeno</label>
           <input type="text" name="tusigeno" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Pulso</span>
+          <label for="" class="details">Pulso</label>
           <input type="text" name="pulso" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Mucosas</span>
+          <label for="" class="details">Mucosas</label>
           <input type="text" name="mucosas" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Condición Corporal (1-9)</span>
+          <label for="" class="details">Condición Corporal (1-9)</label>
           <input type="text" name="condicion" placeholder="1-9" />
         </div>
 
         <div class="input-box">
-          <span class="details">Ganglios superficiales</span>
+          <label for="" class="details">Ganglios superficiales</label>
           <select class="select" name="ganglios" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">Reactivos</option>
@@ -145,20 +145,20 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Palmo percusión</span>
+          <label for="" class="details">Palmo percusión</label>
           <input type="text" name="percusion" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details"></span>
+          <label for="" class="details"></label>
         </div>
         <div class="title">Examen Físico Especial</div>
         <div class="input-box">
-          <span class="details"></span>
+          <label for="" class="details"></label>
         </div>
 
         <div class="input-box">
-          <span class="details">Hidratación</span>
+          <label for="" class="details">Hidratación</label>
           <select class="select" name="hidratacion2" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -167,7 +167,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Estado nutricional</span>
+          <label for="" class="details">Estado nutricional</label>
           <select class="select" name="estanutri" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -176,7 +176,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Ganglios superficiales</span>
+          <label for="" class="details">Ganglios superficiales</label>
           <select class="select" name="ganglios2" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -185,7 +185,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Actitud</span>
+          <label for="" class="details">Actitud</label>
           <select class="select" name="actitud" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -195,7 +195,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Ojos</span>
+          <label for="" class="details">Ojos</label>
           <select class="select" name="ojos" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -205,7 +205,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Oídos</span>
+          <label for="" class="details">Oídos</label>
           <select class="select" name="oidos" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -215,7 +215,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Sist. Digestivo</span>
+          <label for="" class="details">Sist. Digestivo</label>
           <select class="select" name="sistdig" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -225,7 +225,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Sist. Cardiovascular</span>
+          <label for="" class="details">Sist. Cardiovascular</label>
           <select class="select" name="sistcard" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -235,7 +235,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Sist. Respiratorio</span>
+          <label for="" class="details">Sist. Respiratorio</label>
           <select class="select" name="sistresp" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -245,7 +245,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Sist. Urinario</span>
+          <label for="" class="details">Sist. Urinario</label>
           <select class="select" name="sistur" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -255,7 +255,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Sist. Reproductivo</span>
+          <label for="" class="details">Sist. Reproductivo</label>
           <select class="select" name="sistrepr" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -265,7 +265,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Sist. Musculoesqulético</span>
+          <label for="" class="details">Sist. Musculoesqulético</label>
           <select class="select" name="sistmusc" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -275,7 +275,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Sist. Nervioso</span>
+          <label for="" class="details">Sist. Nervioso</label>
           <select class="select" name="sistnerv" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -285,7 +285,7 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Piel y anexos</span>
+          <label for="" class="details">Piel y anexos</label>
           <select class="select" name="piel" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="1">N</option>
@@ -295,22 +295,22 @@
         </div>
 
         <div class="input-box">
-          <span class="details">Detalles Examen</span>
+          <label for="" class="details">Detalles Examen</label>
           <input type="text" name="detallesex" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Diagnósticos presuntivos</span>
+          <label for="" class="details">Diagnósticos presuntivos</label>
           <input type="text" name="diagnosticopresun" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Diagnósticos diferenciales</span>
+          <label for="" class="details">Diagnósticos diferenciales</label>
           <input type="text" name="diagnosticodif" placeholder="" />
         </div>
 
         <div class="input-box">
-          <span class="details">Plan diagnóstico</span>
+          <label for="" class="details">Plan diagnóstico</label>
           <input type="text" name="plan" placeholder="" />
         </div>
 
@@ -318,16 +318,16 @@
 
         <div class="title">Tratamiento</div>
         <div class="input-box">
-          <span class="details"></span>
+          <label for="" class="details"></label>
         </div>
 
         <div class="input-box">
-          <span class="details">Tratamiento</span>
+          <label for="" class="details">Tratamiento</label>
           <input type="text" name="tratamiento" placeholder="Medicamento/Dosis/Vía/Frec/Duración" />
         </div>
 
         <div class="input-box">
-          <span class="details"></span>
+          <label for="" class="details"></label>
         </div>
 
         <input class="buttonm" type="submit" id="buttonm" value="Guardar" />

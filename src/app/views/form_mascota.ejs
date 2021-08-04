@@ -19,7 +19,7 @@
       <!-- <a href="./form_historial.html" class="nav__items"><i class="fas fa-dollar-sign"></i>Tienda</a> -->
 			<% if (position === "administrador") { %>
       <a href="./form_usuario" class="nav__items"><i class="fas fa-user-plus add"></i>Añadir Usuario</a>
-      <% } %>
+			<% } %>
       <a href="./" class="nav__items"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
     </nav>
   </header>
@@ -28,8 +28,8 @@
     <form action="/form_mascota" method="POST">
       <div class="user-details">
         <div class="input-box">
-          <label class="details" for="id_pet">ID Mascota</label>
-          <input type="text" name="id_pet" placeholder="Código" required />
+          <label class="details" for="id_client">ID del cliente</label>
+          <input type="text" name="id_client" placeholder="Documento identidad" required />
         </div>
 
         <div class="input-box">
@@ -38,18 +38,18 @@
         </div>
 
         <div class="input-box">
-          <label class="details" for="name">Nombre</label>
-          <input type="text" name="name" placeholder="Nombre" required />
+          <label class="details" for="name_pet">Nombre</label>
+          <input type="text" name="name_pet" placeholder="Nombre" required />
         </div>
 
         <div class="input-box">
-          <label class="details" for="last_name">Apellidos</label>
-          <input type="text" name="last_name" placeholder="Apellidos" required />
+          <label class="details" for="last_name_pet">Apellidos</label>
+          <input type="text" name="last_name_pet" placeholder="Apellidos" required />
         </div>
 
         <div class="input-box">
-          <label class="details" for="birth_date">Fecha Nacimiento</label>
-          <input name="birth_date" type="date" required id="start" name="trip-start" min="1965-01-01"
+          <label class="details" for="birth_date_pet">Fecha Nacimiento</label>
+          <input name="birth_date_pet" type="date" required id="start" name="trip-start" min="1965-01-01"
             max="2021-12-31" />
           <span></span>
         </div>
@@ -70,8 +70,8 @@
         </div>
 
         <div class="input-box">
-          <label class="details" for="gender">Sexo</label>
-          <select class="select" name="gender" aria-label="Default select example">
+          <label class="details" for="gender_pet">Sexo</label>
+          <select class="select" name="gender_pet" aria-label="Default select example">
             <option selected>Seleccione una opción</option>
             <option value="hembra">Hembra</option>
             <option value="macho">Macho</option>
