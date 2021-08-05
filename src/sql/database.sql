@@ -54,13 +54,13 @@ CREATE TABLE tb_histories (
     date_clinical_histories DATE,
     visit_pet VARCHAR(50),
     anamnesis VARCHAR(80),
-     VARCHAR(200),
-    recent_treatment VARCHAR(250)
+    previous_illnesses VARCHAR(250),
+    recent_treatment VARCHAR(250),
     surgeries VARCHAR(250),
     diet_frequency  VARCHAR(250),
     behaviour VARCHAR(250),
-    weight INT,
-    temperature INT,
+    weight FLOAT,
+    temperature FLOAT,
     heart_rate INT,
     breathing_frequency INT,
     capillary_time INT,
@@ -71,11 +71,11 @@ CREATE TABLE tb_histories (
     mucous VARCHAR(100),
     body_condition INT,
     superficial_nodes VARCHAR(20),
-    percussion_span VARCHAR(50)
+    percussion_span VARCHAR(50),
     hydration CHAR(10),
     nutritional_status CHAR(10),
     superficial_nodes_special CHAR(10),
-    attitude CHAR(10)
+    attitude CHAR(10),
     observations_attitude VARCHAR(250),
     eyes CHAR(10),
     observations_eyes VARCHAR(250),
@@ -101,7 +101,9 @@ CREATE TABLE tb_histories (
     presumptive_diagnoses VARCHAR(250),
     differential_diagnoses CHAR(10),
     diagnostic_plan VARCHAR(250),
-    treatment VARCHAR(250)
+    treatment VARCHAR(250),
+    date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    id_pet INT
 );
 
 SELECT * FROM 

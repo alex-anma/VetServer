@@ -220,7 +220,7 @@ module.exports = app => {
         })
     })
 
-    //
+    //solicitud POST en el formulario mascotas
   app.post('/form_mascota', async (req, res) => {
     const {id_pet, id_client, chip, name_pet, last_name_pet, birth_date_pet, species, race, gender_pet, reproductive_status, deworming, vaccination, state_pet} = req.body;
         connection.query("INSERT INTO tb_pets SET ?", {
@@ -254,9 +254,80 @@ module.exports = app => {
             }
         })
     })
+
+    app.post('/form_historial', async (req, res) => {
+        const {id_clinical_histories, date_clinical_histories, visit_pet, anamnesis, previous_illnesses, recent_treatment, surgeries, diet_frequency, behaviour, weight, temperature, heart_rate, breathing_frequency, capillary_time, skin_fold, dehydration, tussive, pulse, mucous, body_condition, superficial_nodes, percussion_span, hydration, nutritional_status, superficial_nodes_special, attitude, observations_attitude, eyes, observations_eyes, ears, observations_ears, digestive_system, observations_system, cardiac_system, observations_cardiac, respiratory_system, observations_respiratory, urinary_system, observations_urinary, reproductive_system, observations_reproductive, musculoskeletal_system, observations_musculoskeletal, nervous_system, observations_nervous, skin_annex, observations_skin_annex, exam_details, presumptive_diagnoses, differential_diagnoses, diagnostic_plan, treatment} = req.body;
+            connection.query("INSERT INTO tb_histories SET ?", {
+                id_clinical_histories: id_clinical_histories,
+                date_clinical_histories: date_clinical_histories,
+                visit_pet: visit_pet,
+                anamnesis: anamnesis,
+                previous_illnesses: previous_illnesses,
+                recent_treatment: recent_treatment,
+                surgeries: surgeries,
+                diet_frequency: diet_frequency,
+                behaviour: behaviour,
+                weight: weight,
+                temperature: temperature,
+                heart_rate: heart_rate,
+                breathing_frequency: breathing_frequency,
+                capillary_time: capillary_time ,
+                skin_fold: skin_fold,
+                dehydration: dehydration,
+                tussive: tussive,
+                pulse: pulse,
+                mucous: mucous,
+                body_condition: body_condition,
+                superficial_nodes: superficial_nodes,
+                percussion_span: percussion_span,
+                hydration: hydration,
+                nutritional_status: nutritional_status,
+                superficial_nodes_special: superficial_nodes_special,
+                attitude: attitude,
+                observations_attitude: observations_attitude,
+                eyes: eyes,
+                observations_eyes: observations_eyes,
+                ears: ears,
+                observations_ears: observations_ears,
+                digestive_system: digestive_system,
+                observations_system: observations_system,
+                cardiac_system: cardiac_system,
+                observations_cardiac: observations_cardiac,
+                respiratory_system: respiratory_system,
+                observations_respiratory: observations_respiratory,
+                urinary_system: urinary_system,
+                observations_urinary: observations_urinary,
+                reproductive_system: reproductive_system,
+                observations_reproductive: observations_reproductive,
+                musculoskeletal_system: musculoskeletal_system,
+                observations_musculoskeletal: observations_musculoskeletal,
+                nervous_system: nervous_system,
+                observations_nervous: observations_nervous,
+                skin_annex: skin_annex,
+                observations_skin_annex: observations_skin_annex,
+                exam_details: exam_details,
+                presumptive_diagnoses: presumptive_diagnoses,
+                differential_diagnoses: differential_diagnoses,
+                diagnostic_plan: diagnostic_plan,
+                treatment: treatment,
+            }, async(error, results) => {
+                if (error) {
+                    console.log(error);
+                } else {
+                    res.render("form_historial", {
+                        position: req.session.position,
+                        alert:true,
+                        alertTitle: "Registrado",
+                        alertMessage: "Registro Exitoso",
+                        alertIcon: "success",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        ruta: "mascotas"
+                    })
+                }
+            })
+        })
 }
-
-
 
 
 //-------------------------------------------------//----------------------------------------------------//
