@@ -4,8 +4,9 @@
 <head>
     <%- include('./partials/head') %> 
     <title>Resumen Mascota</title>
-    <link rel="stylesheet" href="resources/css/estilosresumenmascotas.css">
-    <link rel="stylesheet" href="resources/css/estilosinicio.css">
+    <link rel="stylesheet" href="/resources/css/estilosresumenmascotas.css ">
+    <link rel="stylesheet" href="/resources/css/estilosinicio.css">
+    
 </head>
 
 <body>
@@ -15,6 +16,7 @@
     </header>
     
     <main>
+        
         <section class="info">
             <div class="info__pet">
                 <img src="/resources/images/user-circle.svg" alt="user">
@@ -64,30 +66,19 @@
                 </thead>
                 <tbody>
                     <tr class="hover">
-                        <td>
-                            <%= inventario[0].id_pet %>
-                        </td>
-                        <td>
-                            <%= inventario[0].name_pet %>
-                        </td>
-                        <td>
-                            <%= inventario[0].birth_date_pet %>
-                        </td>
-                        <td>
-                            <%= inventario[0].species %>
-                        </td>
-                        <td>
-                            <%= inventario[0].race %> 
-                        </td>
-                        <td>
-                            <a href="./historial_clinico"><i class="fas fa-eye"></i></a>
-                        </td>
+                        <td><%= inventario[0].id_pet %></td>
+                        <td><%= inventario[0].name_pet %></td>
+                        <td><%= inventario[0].birth_date_pet %></td>
+                        <td><%= inventario[0].species %></td>
+                        <td><%= inventario[0].race %></td>
+                        <td><a href="./historial_clinico"><i class="fas fa-eye"></i></a></td>
                     </tr>
                 </tbody>
             </table>
         </section>
+
     </main>
-	<script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

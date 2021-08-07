@@ -44,7 +44,8 @@ CREATE TABLE tb_pets(
     deworming DATE,
     vaccination DATE,
     state_pet VARCHAR(20),
-    id_client INT
+    id_client INT NOT NULL,
+    FOREIGN KEY (id_client) REFERENCES tb_clients(id_client);
 );
 
 INSERT INTO tb_pets(id_pet, chip, name, last_name, birth_date, species, race, gender, reproductive_status, deworming, vaccination, state) VALUE('123', '123789','mishka','aristizabal','' ,'' ,'' ,'', '', '', '', '');
@@ -106,4 +107,3 @@ CREATE TABLE tb_histories (
     id_pet INT
 );
 
-SELECT * FROM 

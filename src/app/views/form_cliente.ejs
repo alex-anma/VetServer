@@ -1,102 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Registro Cliente</title>
+    <link rel="stylesheet" href="/resources/css/estilosforms.css" />
+  </head>
 
-<head>
-  <%- include('./partials/head') %> 
-  <title>Registro Cliente</title>
-  <link rel="stylesheet" href="/resources/css/estilosforms.css" />
-</head>
+  <body>
+    <header class="header">
+      <%- include('./partials/header', {position: position}) %>
+    </header>
 
-<body>
+    <main class="container">
+      <h2 class="title">Registro Clientes</h2>
+      <form action="form_cliente" method="POST">
+        <div class="user-details">
+          <div class="input-box">
+            <label class="details" for="id_client">Documento ID</label>
+            <input
+              type="text"
+              name="id_client"
+              placeholder="Documento identidad"
+              required
+            />
+          </div>
 
-  <header class="header">
-    <%- include('./partials/header', {position: position}) %> 
-  </header>
+          <div class="input-box">
+            <label class="details" for="name_client">Nombres</label>
+            <input
+              type="text"
+              name="name_client"
+              placeholder="Nombres"
+              required
+            />
+          </div>
 
-  <div class="container">
-    <div class="title">Registro Clientes</div>
-    <form action="form_cliente" method="POST">
-      <div class="user-details">
-        <div class="input-box">
-          <label class="details" for="id_client">Documento ID</label>
-          <input type="text" name="id_client" placeholder="Documento identidad" required />
+          <div class="input-box">
+            <label class="details" for="surname_client">Primer apellido</label>
+            <input
+              type="text"
+              name="surname_client"
+              placeholder="Primer apellido"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="second_surname_client"
+              >Segundo apellido</label
+            >
+            <input
+              type="text"
+              name="second_surname_client"
+              placeholder="Segundo apellido"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="birth_date_client"
+              >Fecha Nacimiento</label
+            >
+            <input
+              name="birth_date_client"
+              type="date"
+              required
+              id="start"
+              name="trip-start"
+              min="1965-01-01"
+              max="2021-12-31"
+            />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="gender_client">Sexo</label>
+            <select
+              class="select"
+              name="gender_client"
+              aria-label="Default select example"
+            >
+              <option selected>Seleccione una opción</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Prefiero no decir">Prefiero no decir</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="email">Correo electrónico</label>
+            <input type="text" name="email" placeholder="Email" required />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="address">Dirección</label>
+            <input type="text" name="address" placeholder="Dirección" />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="tel">Teléfono</label>
+            <input type="text" name="tel" placeholder="Teléfono" />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="cel">Celular</label>
+            <input type="text" name="cel" placeholder="Celular" required />
+          </div>
+
+          <input
+            class="buttonm"
+            type="submit"
+            id="buttonm"
+            value="Registrar y Agregar Mascota"
+          />
         </div>
-        <div class="input-box">
-          <label class="details" for="name_client">Nombres</label>
-          <input type="text" name="name_client" placeholder="Nombres" required />
-        </div>
+      </form>
+    </main>
 
-        <div class="input-box">
-          <label class="details" for="surname_client">Primer apellido</label>
-          <input type="text" name="surname_client" placeholder="Primer apellido" required />
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="second_surname_client">Segundo apellido</label>
-          <input type="text" name="second_surname_client" placeholder="Segundo apellido" required />
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="birth_date_client">Fecha Nacimiento</label>
-          <input name="birth_date_client" type="date" required id="start" name="trip-start" min="1965-01-01"
-            max="2021-12-31" />
-          <span></span>
-
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="gender_client">Sexo</label>
-          <select class="select" name="gender_client" aria-label="Default select example">
-            <option selected>Seleccione una opción</option>
-            <option value="Femenino">Femenino</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Prefiero no decir">Prefiero no decir</option>
-          </select>
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="email">Correo electrónico</label>
-          <input type="text" name="email" placeholder="Email" required />
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="address">Dirección</label>
-          <input type="text" name="address" placeholder="Dirección" />
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="tel">Teléfono</label>
-          <input type="text" name="tel" placeholder="Teléfono" />
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="cel">Celular</label>
-          <input type="text" name="cel" placeholder="Celular" required />
-        </div>
-
-        <input class="buttonm" type="submit" id="buttonm" value="Registrar y Agregar Mascota" />
-
-    </form>
-  </div>
-  </div>
-  <script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
-
-  <!--SWEET ALERT 2-->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <% if(typeof alert !="undefined" ) { %>
-    <script>
-      Swal.fire({
-        title: '<%= alertTitle %>',
-        text: '<%= alertMessage %>',
-        icon: '<%= alertIcon %>',
-        showConfirmButton: <%= showConfirmButton %>,
-        timer: <%= timer %>
-            }).then(() => {
-          window.location = '/<%=ruta%>'
-        })
-    </script>
-    <% } %>
-</body>
-
+    <footer>
+      <%- include("./partials/footer.ejs") %> 
+      <% if(typeof alert != "undefined") { %>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        const alerta = {
+          title: '<%= alertTitle %>',
+          text: '<%= alertMessage %>',
+          icon: '<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+        };
+        Swal.fire(alerta)
+          .then(() => {window.location = '/<%=ruta%>'});
+      </script>
+      <% } %>
+    </footer>
+    
+  </body>
 </html>

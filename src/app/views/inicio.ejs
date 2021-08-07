@@ -43,32 +43,33 @@
           </thead>
 
           <tbody>
-            <% for(let elemento of inventario) { %>
+            <% for(let cliente of inventario) { %>
             <tr class="hover">
 				
-              <td><%= elemento.id_client %></td>
-              <td><%= elemento.name_client %> <%= elemento.surname_client %></td>
-              <td><%= elemento.id_pet %></td>
-              <td><%= elemento.name_pet %></td>
-              <td><%= elemento.race %></td>
-              <td><%= elemento.gender_pet %></td>
+              <td><%= cliente.id_client %></td>
+              <td><%= cliente.name_client %> <%= cliente.surname_client %></td>
+              <td><%= cliente.id_pet %></td>
+              <td><%= cliente.name_pet %></td>
+              <td><%= cliente.race %></td>
+              <td><%= cliente.gender_pet %></td>
               
 			  <td>
-                <a class="fas fa-eye" href="./resumen_cliente/<%= elemento.id_client %>" style="text-decoration: none;"></a>
+                <a class="fas fa-eye" href="./resumen_cliente/<%= cliente.id_client %>" style="text-decoration: none;"></a>
               </td>
 
               <td>
                 <button
-				  class="btn btn-primary fas fa-edit"
+				          class="btn btn-primary fas fa-edit"
                   type="button"
                   data-bs-toggle="modal"
-                  data-bs-target="#editModal<%= elemento.id_client %>"
+                  data-bs-target="#editModal<%= cliente.id_client %>"
                   data-bs-whatever="@fat"
                 > </button>
+				        <%- include("./partials/modal_edit.ejs", {cliente}) %> 
               </td>
 
               <td>
-                <a class="fas fa-trash" href="/delete/<%= elemento.id_client %>"></a>
+                <a class="fas fa-trash" href="/delete/<%= cliente.id_client %>"></a>
               </td>
 
             </tr>
@@ -79,7 +80,9 @@
       </div>
     </main>
 
-    
+	<footer>
+		<%- include("./partials/footer.ejs") %> 
+	</footer>
     
   </body>
 </html>
