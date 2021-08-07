@@ -1,120 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/resources/css/estilosinicio.css" />
+    <title>Inicio</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-	<link rel="stylesheet" href="/resources/css/estilosinicio.css" />
-	<title>Inicio</title>
-</head>
+  <body>
+    <header class="header">
+      <%- include('./partials/header', {position: position}) %>
+    </header>
 
-<body>
-	<header class="header">
-		<nav class="nav">
-			<a href="./inicio" class="nav__items"><i class="fas fa-user"></i>Clientes</a>
-			<a href="./mascotas" class="nav__items"><i class="fas fa-paw"></i>Mascotas</a>
-			<!-- <a href="./form_historial.html" class="nav__items"><i class="fas fa-dollar-sign"></i>Tienda</a> -->
-			<% if (position === "administrador") { %>
-			<a href="./form_usuario" class="nav__items"><i class="fas fa-user-plus add"></i>Añadir Usuario</a>
-			<% } %>
-			<a href="./logout" class="nav__items"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
-		</nav>
-	</header>
-	<h2 class="title">Propietario Registrados</h2>
-	<main class="main_content">
-		<div class="box">
-			<div class="element">
-				<a class="client" href="./form_cliente"><i class="fas fa-user-plus add"></i>Añadir cliente</a>
-				<div class="search-box">
-					<label for="search" class="icon"><input id="search" type="text" placeholder="Busqueda..." />
-						<i class="fas fa-search buscar"></i>
-				</div>
-				</label>
-			</div>
-				<div>
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">Documento del propietario</th>
-								<th scope="col">Nombre del propietario</th>
-								<th scope="col">Id del paciente</th>
-								<th scope="col">Nombre del paciente</th>
-								<th scope="col">Raza</th>
-								<th scope="col">Genero</th>
-								<th scope="col">Detalles</th>
-								<th scope="col">Editar</th>
-								<th scope="col">Borrar</th>
-							</tr>
-						</thead>
-						<tbody>
-							<% for(let i=0; i < inventario.length; i++) { %>
-								<tr class="hover">
-									<td>
-										<%= inventario[i].id_client %>
-									</td>
-									<td>
-										<%= inventario[i].name_client %>
-										<%= inventario[i].surname_client %>
-									</td>
-									<td>
-										<%= inventario[i].id_pet %>
-									</td>
-									<td>
-										<%= inventario[i].name_pet %>
-									</td>
-									<td>
-										<%= inventario[i].race %>
-									</td>
-									<td>
-										<%= inventario[i].gender_pet %>
-									</td>
-									<td>
-										<a href="./resumen_cliente/<%= inventario[i].id_client %>"><i class="fas fa-eye"></i></a>
-									</td>
-									<td>
-										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal<%= inventario[i].id_client %>" data-bs-whatever="@fat"><i class="fas fa-edit"></i></button>										<div class="modal fade" id="editModal<%= inventario[i].id_client %>" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-											<div class="modal-dialog" role="document">
-											  <div class="modal-content">
-												<div class="modal-header">
-												  <h5 class="modal-title" id="modalLabel">Editar información</h5>
-												  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												  </button>
-												</div>
-												<div class="modal-body">
-												  <form>
-													<div class="form-group">
-													  <label for="recipient-name" class="col-form-label">Recipient:</label>
-													  <input type="text" class="form-control" id="recipient-name">
-													</div>
-													<div class="form-group">
-													  <label for="message-text" class="col-form-label">Message:</label>
-													  <textarea class="form-control" id="message-text"></textarea>
-													</div>
-												  </form>
-												</div>
-												<div class="modal-footer">
-												  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-												  <button type="button" class="btn btn-primary">Send message</button>
-												</div>
-											  </div>
-											</div>
-										  </div>
-									</td>
-									<td>
-										<a href="/delete/<%= inventario[i].id_client %>"><i class="fas fa-trash"></i></a>
-									</td>
-								</tr>
-								<% } %>
-						</tbody>
-					</table>
-				</div>
-		</div>
-	</main>
-	<script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+    <h2 class="title">Propietario Registrados</h2>
 
+    <main class="main_content">
+      <div class="box">
+        <div class="element">
+          <a class="client" href="./form_cliente">
+            <i class="fas fa-user-plus add"></i>Añadir cliente
+          </a>
+          <div class="search-box">
+            <label for="search" class="icon">
+              <input id="search" type="text" placeholder="Busqueda..." />
+              <i class="fas fa-search buscar"></i>
+            </label>
+          </div>
+        </div>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Documento del propietario</th>
+              <th scope="col">Nombre del propietario</th>
+              <th scope="col">Id del paciente</th>
+              <th scope="col">Nombre del paciente</th>
+              <th scope="col">Raza</th>
+              <th scope="col">Genero</th>
+              <th scope="col">Detalles</th>
+              <th scope="col">Editar</th>
+              <th scope="col">Borrar</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% for(let elemento of inventario) { %>
+            <tr class="hover">
+				
+              <td><%= elemento.id_client %></td>
+              <td><%= elemento.name_client %> <%= elemento.surname_client %></td>
+              <td><%= elemento.id_pet %></td>
+              <td><%= elemento.name_pet %></td>
+              <td><%= elemento.race %></td>
+              <td><%= elemento.gender_pet %></td>
+              
+			  <td>
+                <a class="fas fa-eye" href="./resumen_cliente/<%= elemento.id_client %>" style="text-decoration: none;"></a>
+              </td>
+
+              <td>
+                <button
+				  class="btn btn-primary fas fa-edit"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#editModal<%= elemento.id_client %>"
+                  data-bs-whatever="@fat"
+                > </button>
+              </td>
+
+              <td>
+                <a class="fas fa-trash" href="/delete/<%= elemento.id_client %>"></a>
+              </td>
+
+            </tr>
+            <% } %>
+			
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    
+    
+  </body>
 </html>

@@ -2,24 +2,15 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<%- include('./partials/head') %> 
 	<link rel="stylesheet" href="resources/css/estilosinicio.css" />
 	<title>Mascotas Registradas</title>
 </head>
 
 <body>
+	
 	<header class="header">
-		<nav class="nav">
-			<a href="./inicio" class="nav__items"><i class="fas fa-user"></i>Clientes</a>
-			<a href="./mascotas" class="nav__items"><i class="fas fa-paw"></i>Mascotas</a>
-			<!-- <a href="./form_historial.html" class="nav__items"><i class="fas fa-dollar-sign"></i>Tienda</a> -->
-			<% if (position === "administrador") { %>
-			<a href="./form_usuario" class="nav__items"><i class="fas fa-user-plus add"></i>Añadir Usuario</a>
-			<% } %>
-			<a href="./logout" class="nav__items"><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
-		</nav>
+		<%- include('./partials/header', {position: position}) %>
 	</header>
 	
 	<main class="main_content">

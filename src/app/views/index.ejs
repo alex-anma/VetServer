@@ -2,52 +2,46 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pagina Web</title>
-	<link rel="stylesheet" href="/resources/css/normalize.css">
-	<link rel="stylesheet" href="/resources/css/estilos.css">
-	<link rel="stylesheet" href="/resources/css/indexresponsive.css">
+	<%- include('./partials/head') %>
+		<title>Pagina Web</title>
+		<link rel="stylesheet" href="/resources/css/normalize.css">
+		<link rel="stylesheet" href="/resources/css/estilos.css">
+		<link rel="stylesheet" href="/resources/css/indexresponsive.css">
 </head>
 
 <body>
 	<header class="hero">
-		<div class="respmenu">
-			<input type="checkbox">
-			<i class="fas fa-bars"></i>
-			<i class="fas fa-times"></i>
-			<nav>
+		<%- include('./partials/header_respon') %>
+
+			<div class="contact">
+				<a href="#" class="contact__items"><i class="fas fa-clock"></i>Horario de atención: Lunes A Sábado 08:00
+					-
+					19:00</a>
+				<a href="#" class="contact__items"><i class="fas fa-phone"></i>Teléfono: 2811209</a>
+				<a href="mailto:alex-anma@hotmail.com?Subject=Aquí%20el%20asunto%20del%20mail" class="contact__items"><i
+						class="fas fa-envelope"></i>Email</a>
+			</div>
+
+			<nav class="nav">
+				<a href="#" class="logo"><img src="/resources/images/Villa Paula1.png" alt="VillaPaula"></a>
 				<a href="#" class="nav__items"><i class="home"></i>Inicio</a>
 				<a href="#services" class="nav__items"><i class="services"></i>Servicios</a>
-				<a href="#contacto" class="nav__items"><i class="contactanos"></i>Contáctanos</a>
+				<a href="#footer" class="nav__items"><i class="contactanos"></i>Contáctanos</a>
 				<a href="/login" class="nav__items nav__items--cta">Ingreso Veterinarios</a>
 			</nav>
-		</div>
-		<div class="contact">
-			<a href="#" class="contact__items"><i class="fas fa-clock"></i>Horario de atención: Lunes A Sábado 08:00 -
-				19:00</a>
-			<a href="#" class="contact__items"><i class="fas fa-phone"></i>Teléfono: 2811209</a>
-			<a href="mailto:alex-anma@hotmail.com?Subject=Aquí%20el%20asunto%20del%20mail" class="contact__items"><i
-					class="fas fa-envelope"></i>Email</a>
-		</div>
-		<nav class="nav">
-			<a href="#" class="logo"><img src="/resources/images/Villa Paula1.png" alt="VillaPaula"></a>
-			<a href="#" class="nav__items"><i class="home"></i>Inicio</a>
-			<a href="#services" class="nav__items"><i class="services"></i>Servicios</a>
-			<a href="#footer" class="nav__items"><i class="contactanos"></i>Contáctanos</a>
-			<a href="/login" class="nav__items nav__items--cta">Ingreso Veterinarios</a>
-		</nav>
-		<div class="container">
-			<!--contenedor para dar margen y no sobrepasar-->
-			<section class="hero__container">
-				<div class="hero__texts">
-					<h1 class="hero__title">Bienvenidos al Centro Veterinaria Villa Paula</h1>
-					<h2 class="hero__subtitle">Centro Veterinaria Villa Paula, es una clínica veterinaria dedicada a
-						ofrecer atención con calidad para los consentidos de casa: las mascotas.</h2>
-					<a href="#nosotros" class="hero__cta">Conoce más</a>
-				</div>
-			</section>
-		</div>
+
+			<div class="container">
+				<!--contenedor para dar margen y no sobrepasar-->
+				<section class="hero__container">
+					<div class="hero__texts">
+						<h1 class="hero__title">Bienvenidos al Centro Veterinaria Villa Paula</h1>
+						<h2 class="hero__subtitle">Centro Veterinaria Villa Paula, es una clínica veterinaria dedicada a
+							ofrecer atención con calidad para los consentidos de casa: las mascotas.</h2>
+						<a href="#nosotros" class="hero__cta">Conoce más</a>
+					</div>
+				</section>
+			</div>
+
 	</header>
 
 	<main>
@@ -56,6 +50,7 @@
 			<div class="container">
 				<h2 id="services" class="subtitle">Servicios</h2>
 				<div class="lose__grid">
+
 					<article class="lose__items">
 						<img src="/resources/images/Veterinaria2.jpg" alt="servicio1" class="lose__img">
 						<div class="lose__hover">
@@ -129,15 +124,15 @@
 					</div>
 				</article>
 			</div>
-
 		</section>
-		</div class="social-wpp">
-		<a href="https://wa.link/16wtiu" class="wpp icon-whatsapp" target="_blank">
-			<i class="fab fa-whatsapp"></i>
-		</a>
+
+		<div class="social-wpp">
+			<a href="https://wa.link/16wtiu" class="wpp icon-whatsapp" target="_blank">
+				<i class="fab fa-whatsapp"></i>
+			</a>
 		</div>
 	</main>
-	<i class=""></i>
+
 	<footer id="footer" class="footer">
 		<div class="footer__text container">
 			<div>
@@ -156,6 +151,7 @@
 					<li><a class="fab fa-whatsapp" target="_bank" href="https://wa.link/16wtiu"></a></li>
 				</ul>
 			</div>
+			
 			<div>
 				<h2>Ubícanos</h2>
 				<i class="fas fa-map-marker-alt"></i>
@@ -174,4 +170,3 @@
 </body>
 
 </html>
-Copyright © Laura Aristizabal - Luis Ramos - David Marín
