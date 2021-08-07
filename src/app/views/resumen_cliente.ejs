@@ -2,52 +2,50 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head') %> 
     <title>Resumen Mascota</title>
     <link rel="stylesheet" href="/resources/css/estilosresumenmascotas.css ">
     <link rel="stylesheet" href="/resources/css/estilosinicio.css">
-    
+    <%- include('./partials/head') %>
 </head>
 
 <body>
-
     <header class="header">
         <%- include('./partials/header', {position: position}) %>
     </header>
-    
+
     <main>
-        
         <section class="info">
             <div class="info__pet">
                 <img src="/resources/images/user-circle.svg" alt="user">
-                <h2><%= inventario[0].name_client %> <%= inventario[0].surname_client %></h2>
+                <h2><%= cliente.name_cliente %> <%= cliente.surname_cliente %></h2>
             </div>
             <div class="info__table">
                 <table>
                     <tr>
                         <th>Nombres:</th>
-                        <td><%= inventario[0].id_client %></td>
+                        <td><%= cliente.id_cliente %></td>
                     </tr>
                     <tr>
                         <th>Apellidos:</th>
-                        <td><%= inventario[0].email %></td>
+                        <td><%= cliente.email %></td>
                     </tr>
                     <tr>
                         <th>Documento ID:</td>
-                        <td><%= inventario[0].address %></td>
+                        <td><%= cliente.address %></td>
                     </tr>
                     <tr>
                         <th>Dirección:</th>
-                        <td><%= inventario[0].cel %></td>
+                        <td><%= cliente.cel %></td>
                     </tr>
                     <tr>
                         <th>Correo:</th>
-                        <td><%= inventario[0].birth_date_client %></td>
+                        <td><%= cliente.birth_date_cliente %></td>
                     </tr>
                 </table>
             </div>
+
             <div class="pet">
-				<a class="client pet-add" href="./form_mascota"><i class="fas fa-paw add"></i>Añadir mascota</a>
+				<a class="cliente pet-add fas fa-paw add" href="./form_mascota">Añadir mascota</a>
             </div>
         </section>
 
@@ -66,19 +64,19 @@
                 </thead>
                 <tbody>
                     <tr class="hover">
-                        <td><%= inventario[0].id_pet %></td>
-                        <td><%= inventario[0].name_pet %></td>
-                        <td><%= inventario[0].birth_date_pet %></td>
-                        <td><%= inventario[0].species %></td>
-                        <td><%= inventario[0].race %></td>
-                        <td><a href="./historial_clinico"><i class="fas fa-eye"></i></a></td>
+                        <% for(let pet of pets) {%>
+                            <td><%= pet.id_pet %></td>
+                            <td><%= pet.name_pet %></td>
+                            <td><%= pet.birth_date_pet %></td>
+                            <td><%= pet.species %></td>
+                            <td><%= pet.race %></td>
+                            <td><a class="fas fa-eye" href="./historial_clinico"></a></td>
+                        <% } %>  
                     </tr>
                 </tbody>
             </table>
         </section>
 
     </main>
-
 </body>
-
 </html>

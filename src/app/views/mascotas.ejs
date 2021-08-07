@@ -1,87 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="resources/css/estilosinicio.css" />
+    <title>Mascotas Registradas</title>
+  </head>
 
-<head>
-	<%- include('./partials/head') %> 
-	<link rel="stylesheet" href="resources/css/estilosinicio.css" />
-	<title>Mascotas Registradas</title>
-</head>
+  <body>
+    <header class="header">
+      <%- include('./partials/header', {position: position}) %>
+    </header>
 
-<body>
-	
-	<header class="header">
-		<%- include('./partials/header', {position: position}) %>
-	</header>
-	
-	<main class="main_content">
-		<div class="box">
-			<div class="element">
-				<h2 class="registered">Mascotas Registradas</h2>
-				<!-- <a class="client" href="./form_mascota.html"><i class="fas fa-user-plus add"></i>Añadir mascota</a> -->
-				<div class="search-box">
-					<label for="search" class="icon"><input id="search" type="text" placeholder="Busqueda..." />
-						<i class="fas fa-search buscar"></i>
-				</div>
-				</label>
-			</div>
-			<% inventario %>
-				<div>
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">Chip</th>
-								<th scope="col">Fecha última consulta</th>
-								<th scope="col">Nombre de mascota</th>
-								<th scope="col">Especie</th>
-								<th scope="col">Raza</th>
-								<th scope="col">Propietario</th>
-								<th scope="col">Estado</th>
-								<th scope="col">Editar</th>
-								<th scope="col">Detalles</th>
-							</tr>
-						</thead>
-						
-						<tbody>
-							<% for(let i=0; i < inventario.length; i++) { %>
-								<tr class="hover">
-									<td>
-										<%= inventario[i].chip %>
-									</td>
-									<td>
-										
-									</td>
-									<td>
-										<%= inventario[i].name_pet %>
-										<%= inventario[i].last_name_pet %>
-									</td>
-									<td>
-										<%= inventario[i].species %>
-									</td>
-									<td>
-										<%= inventario[i].race %>
-									</td>
-									<td>
-										<%= inventario[i].name_client %>
-										<%= inventario[i].surname_client %>
-									</td>
-									<td>
-										<%= inventario[i].state_pet %>
-									</td>
-									<td>
-										<a href="#"><i class="fas fa-edit"></i></a>
-									</td>
-									<td>
-										<a href="./resumen_mascota"><i class="fas fa-eye"></i></a>
-									</td>
-								</tr>
-								<% } %>
-						</tbody>
-					</table>
-				</div>
-		</div>
-	</main>
+    <h2 class="title">Mascotas Registradas</h2>
 
-	<script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
-</body>
+    <main class="main_content">
+      <section class="box">
+        <div class="element">
+          <!-- <a class="client" href="./form_mascota.html"><i class="fas fa-user-plus add"></i>Añadir mascota</a> -->
+          <div class="search-box">
+            <label for="search" class="icon">
+              <input id="search" type="text" placeholder="Busqueda..." />
+              <i class="fas fa-search buscar"></i>
+            </label>
+          </div>
+        </div>
 
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Chip</th>
+                <th scope="col">Fecha última consulta</th>
+                <th scope="col">Nombre de mascota</th>
+                <th scope="col">Especie</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Propietario</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Detalles</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% for(let cliente of inventario) { %>
+              <tr class="hover">
+                <td><%= cliente.chip %></td>
+                <td><%= cliente.name_pet %> <%= cliente.last_name_pet%></td>
+                <td><%= cliente.species %></td>
+                <td><%= cliente.race %></td>
+                <td><%= cliente.name_client %><%=cliente.surname_client%></td>
+                <td><%= cliente.state_pet %></td>
+                <td><a class="fas fa-edit" href="#"></a></td>
+                <td><a class="fas fa-eye" href="./resumen_mascota"></a></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer><%- include("./partials/footer.ejs") %></footer>
+  </body>
 </html>

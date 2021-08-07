@@ -1,125 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('./partials/head') %>
+    <title>Registro Mascota</title>
+    <link rel="stylesheet" href="/resources/css/estilosforms.css" />
+  </head>
 
-<head>
-  <%- include('./partials/head') %> 
-  <title>Registro Mascota</title><link rel="stylesheet" href="/resources/css/estilosforms.css" />
-</head>
+  <body>
+    <header class="header">
+      <%- include('./partials/header', {position: position}) %>
+    </header>
 
-<body>
+    <main class="container">
+      <h2 class="title">Ingrese Datos Mascota</h2>
+      <form action="/form_mascota" method="POST">
+        <div class="user-details">
 
-  <header class="header">
-    <%- include('./partials/header', {position: position}) %>
-  </header>
+          <div class="input-box">
+            <label class="details" for="id_client">ID del cliente</label>
+            <input
+              type="text"
+              name="id_client"
+              placeholder="Documento identidad"
+              required
+            />
+          </div>
 
-  <div class="container">
-    <div class="title">Ingrese Datos Mascota</div>
-    <form action="/form_mascota" method="POST">
-      <div class="user-details">
-        <div class="input-box">
-          <label class="details" for="id_client">ID del cliente</label>
-          <input type="text" name="id_client" placeholder="Documento identidad" required />
+          <div class="input-box">
+            <label class="details" for="chip">Chip</label>
+            <input type="text" name="chip" placeholder="Chip" />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="name_pet">Nombre</label>
+            <input type="text" name="name_pet" placeholder="Nombre" required />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="last_name_pet">Apellidos</label>
+            <input
+              type="text"
+              name="last_name_pet"
+              placeholder="Apellidos"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="birth_date_pet">Fecha Nacimiento</label>
+            <input
+              name="birth_date_pet"
+              type="date"
+              required
+              id="start"
+              name="trip-start"
+              min="1965-01-01"
+              max="2021-12-31"
+            />
+            <span></span>
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="species">Especie</label>
+            <select
+              class="select"
+              name="species"
+              aria-label="Default select example"
+            >
+              <option selected>Seleccione una opción</option>
+              <option value="canino">Canino</option>
+              <option value="felino">Felino</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="race">Raza</label>
+            <input type="text" name="race" placeholder="Raza" required />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="gender_pet">Sexo</label>
+            <select
+              class="select"
+              name="gender_pet"
+              aria-label="Default select example"
+            >
+              <option selected>Seleccione una opción</option>
+              <option value="hembra">Hembra</option>
+              <option value="macho">Macho</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="reproductive_status">Estado reproductivo</label>
+            <select
+              class="select"
+              name="reproductive_status"
+              aria-label="Default select example"
+            >
+              <option selected>Seleccione una opción</option>
+              <option value="entero">Entero</option>
+              <option value="esterilizado">Esterilizado</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="deworming">Fecha de desparasitación</label>
+            <input
+              name="deworming"
+              type="date"
+              id="start"
+              min="1965-01-01"
+              max="2021-12-31"
+            />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="vaccination">Fecha de vacunación</label>
+            <input
+              name="vaccination"
+              type="date"
+              id="start"
+              min="1965-01-01"
+              max="2021-12-31"
+            />
+          </div>
+
+          <div class="input-box">
+            <label class="details" for="state_pet">Estado</label>
+            <select
+              class="select"
+              name="state_pet"
+              aria-label="Default select example"
+            >
+              <option selected>Seleccione una opción</option>
+              <option value="vivo">Vivo</option>
+              <option value="fallecido">Fallecido</option>
+            </select>
+          </div>
+
+          <input
+            class="buttonr"
+            type="submit"
+            id="buttonr"
+            value="Registrar Historia Clínica"
+          />
+          
         </div>
+      </form>
+    </main>
 
-        <div class="input-box">
-          <label class="details" for="chip">Chip</label>
-          <input type="text" name="chip" placeholder="Chip" />
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="name_pet">Nombre</label>
-          <input type="text" name="name_pet" placeholder="Nombre" required />
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="last_name_pet">Apellidos</label>
-          <input type="text" name="last_name_pet" placeholder="Apellidos" required />
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="birth_date_pet">Fecha Nacimiento</label>
-          <input name="birth_date_pet" type="date" required id="start" name="trip-start" min="1965-01-01"
-            max="2021-12-31" />
-          <span></span>
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="species">Especie</label>
-          <select class="select" name="species" aria-label="Default select example">
-            <option selected>Seleccione una opción</option>
-            <option value="canino">Canino</option>
-            <option value="felino">Felino</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="race">Raza</label>
-          <input type="text" name="race" placeholder="Raza" required />
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="gender_pet">Sexo</label>
-          <select class="select" name="gender_pet" aria-label="Default select example">
-            <option selected>Seleccione una opción</option>
-            <option value="hembra">Hembra</option>
-            <option value="macho">Macho</option>
-          </select>
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="reproductive_status">Estado reproductivo</label>
-          <select class="select" name="reproductive_status" aria-label="Default select example">
-            <option selected>Seleccione una opción</option>
-            <option value="entero">Entero</option>
-            <option value="esterilizado">Esterilizado</option>
-          </select>
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="deworming">Fecha de desparasitación</label>
-          <input name="deworming" type="date" id="start" min="1965-01-01" max="2021-12-31" />
-          <span></span>
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="vaccination">Fecha de vacunación</label>
-          <input name="vaccination" type="date" id="start" min="1965-01-01" max="2021-12-31" />
-          <span></span>
-        </div>
-
-        <div class="input-box">
-          <label class="details" for="state_pet">Estado</label>
-          <select class="select" name="state_pet" aria-label="Default select example">
-            <option selected>Seleccione una opción</option>
-            <option value="vivo">Vivo</option>
-            <option value="fallecido">Fallecido</option>
-          </select>
-        </div>
-
-        <input class="buttonr" type="submit" id="buttonr" value="Registrar Historia Clínica" />
-
-      </div>
-    </form>
-  </div>
-  <script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
-
-  <!--SWEET ALERT 2-->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <% if(typeof alert !="undefined" ) { %>
-    <script>
-      Swal.fire({
-        title: '<%= alertTitle %>',
-        text: '<%= alertMessage %>',
-        icon: '<%= alertIcon %>',
-        showConfirmButton: <%= showConfirmButton %>,
-        timer: <%= timer %>
-            }).then(() => {
-          window.location = '/<%=ruta%>'
-        })
-    </script>
-    <% } %>
-</body>
-
+    <footer>
+      <%- include("./partials/footer.ejs") %> <% if(typeof alert != "undefined")
+      { %>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        const alerta = {
+            title: '<%= alertTitle %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton: <%= showConfirmButton %>,
+            timer: <%= timer %>
+          };
+          Swal.fire(alerta)
+            .then(() => {window.location = '/<%=ruta%>'});
+      </script>
+      <% } %>
+    </footer>
+  </body>
 </html>

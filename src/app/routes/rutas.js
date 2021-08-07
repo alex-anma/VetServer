@@ -12,9 +12,8 @@ module.exports = (app) => {
 
   app.get("/inicio", (req, res) => {
     connection.query(
-      "SELECT * FROM tb_clients JOIN tb_pets ON tb_clients.id_client = tb_pets.id_client",
+      "SELECT * FROM tb_clients",
       (err, result) => {
-        // console.log(result);
         if (err) {
           res.send("Something went wrong : (" + err);
         } else {
@@ -44,20 +43,38 @@ module.exports = (app) => {
 
   app.get("/resumen_cliente/:id_client", (req, res) => {
     const id_client = req.params.id_client;
-    connection.query(
-      "SELECT * FROM tb_clients WHERE id_client = ?",
-      [id_client],
-      (err, result) => {
+    connection.query( "SELECT * FROM tb_clients WHERE id_client = ?", [id_client], (err, result) => {
         if (err) {
           res.send(err);
         } else {
-          res.render("../views/resumen_cliente.ejs", {
-            inventario: result,
-            position: req.session.position,
+          const client = result[0];
+          console.log(result)
+
+          connection.query("SELECT * FROM tb_pets WHERE id_client = ?", [id_client], (err, result) =>{
+            let pets = []; 
+            if(result.length === 0 ){
+              pets.push({
+                id_pet: 1,
+                name_pet: "Sizas",
+                birth_date_pet: "Mera vuelta",
+                species: "La especie cucho",
+                race: "De raza"
+              });
+             } else {
+                pets = result;
+              }
+            
+            console.log(client);
+            console.log(pets);
+
+            res.render("../views/resumen_cliente.ejs", {
+              cliente: client,
+              pets: pets,
+              position: req.session.position,
+            });
           });
         }
-      }
-    );
+    });
   });
 
   app.get("/mascotas", (req, res) => {

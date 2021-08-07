@@ -119,18 +119,18 @@
     <footer>
       <%- include("./partials/footer.ejs") %> 
       <% if(typeof alert != "undefined") { %>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
         const alerta = {
-          title: '<%= alertTitle %>',
-          text: '<%= alertMessage %>',
-          icon: '<%= alertIcon %>',
-          showConfirmButton: <%= showConfirmButton %>,
-          timer: <%= timer %>
-        };
-        Swal.fire(alerta)
-          .then(() => {window.location = '/<%=ruta%>'});
-      </script>
+            title: '<%= alertTitle %>',
+            text: '<%= alertMessage %>',
+            icon: '<%= alertIcon %>',
+            showConfirmButton: <%= showConfirmButton %>,
+            timer: <%= timer %>
+          };
+          Swal.fire(alerta)
+            .then(() => {window.location = '/<%=ruta%>'});
+        </script>
       <% } %>
     </footer>
     
