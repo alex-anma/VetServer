@@ -475,6 +475,29 @@ module.exports = (app) => {
       }
     );
   });
+
+  app.post("/edit/:id_client", (req,res) => {
+    const id_client = req.params.id_client;
+    const {
+      name_client,
+      surname_client,
+      second_surname_client,
+      birth_date_client,
+      gender_client,
+      email,
+      address,
+      tel,
+      cel
+    } = req.body;
+    connection.query("UPDATE tb_clients SET name_client = ?, surname_client = ?, second_surname_client = ?, birth_date_client = ?, gender_client = ?, email = ?, address = ?, tel = ?, cel = ? WHERE id_client = ?", [name_client, surname_client, second_surname_client, birth_date_client, gender_client, email, address, tel, cel, id_client], (err, result) => {
+      if (err) {
+        res.send(err);        
+      } else {
+        res.redirect("/inicio")
+      }
+    })
+  })
 };
+
 
 //-------------------------------------------------//----------------------------------------------------//
