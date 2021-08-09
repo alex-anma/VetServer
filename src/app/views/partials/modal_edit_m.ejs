@@ -1,0 +1,108 @@
+<div class="modal fade" id="editModal<%= pet.id_pet %>" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <h5 class="modal-title">Editar Informacion de <%= pet.name_pet %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <form method="POST" action="/mascotas/<%= pet.id_pet %>">
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Chip:</label>
+                <input name="chip" type="text" class="form-control" id="message-text" value="<%= pet.chip %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Nombre:</label>
+                <input name="name_pet" type="text" class="form-control" id="message-text" value="<%= pet.name_pet %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Apellidos:</label>
+                <input name="last_name_pet" type="text" class="form-control" id="message-text" value="<%= pet.last_name_pet %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Fecha Nacimiento:</label>
+                <input name="birth_date_pet" type="date" class="form-control" id="message-text">
+              </div>
+
+              <div class="input-box">
+                <label for="species" class="details">Especie:</label>
+                <select
+                class="select"
+                name="species"
+                aria-label="Default select example">
+                <option selected>Seleccione una opción</option>
+                <option value="canino">Canino</option>
+                <option value="felino">Felino</option>
+                <option value="otro">Otro</option>
+              </select>
+              </div>
+
+            <div class="mb-3">
+                <label for="message-text" class="col-form-label">Raza:</label>
+                <input name="race" type="text" class="form-control" id="message-text" value="<%= pet.race %>">
+            </div>
+
+            <div class="mb-3">
+                <label class="details" for="gender_pet">Sexo</label>
+                <select
+                class="select"
+                name="gender_pet"
+                aria-label="Default select example"
+            >
+                <option selected>Seleccione una opción</option>
+                <option value="hembra">Hembra</option>
+                <option value="macho">Macho</option>
+            </select>
+              </div>
+
+            <div class="mb-3">
+                <label class="details"              for="reproductive_status">Estado reproductivo</label>
+                <select
+                class="select"
+                name="reproductive_status"
+                aria-label="Default select example"
+                >
+                <option selected>Seleccione una opción</option>
+                <option value="entero">Entero</option>
+                <option value="esterilizado">Esterilizado</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="message-text" class="col-form-label">Fecha de desparasitación:</label>
+                <input name="deworming" type="date" class="form-control" id="message-text">
+            </div>
+            
+            <div class="mb-3">
+                <label for="message-text" class="col-form-label">Fecha de vacunación:</label>
+                <input name="vaccination" type="date" class="form-control" id="message-text">
+            </div>
+
+            <div class="mb-3">
+                <label class="details"              
+                for="state_pet">Estado</label>
+                <select
+                class="select"
+                name="state_pet"
+                aria-label="Default select example"
+                >
+                <option selected>Seleccione una opción</option>
+                <option value="vivo">Vivo</option>
+                <option value="fallecido">Fallecido</option>
+                </select>
+            </div>
+
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Editar Información">
+            </form>
+          </div>
+
+        </div>
+      </div>
+</div>

@@ -45,44 +45,44 @@
           <tbody>
             <% for(let cliente of inventario) { %>
             <tr class="hover">
-				
               <td><%= cliente.id_client %></td>
               <td><%= cliente.name_client %> <%= cliente.surname_client %></td>
               <td><%= cliente.id_pet %></td>
               <td><%= cliente.name_pet %></td>
               <td><%= cliente.race %></td>
               <td><%= cliente.gender_pet %></td>
-              
-			  <td>
-                <a class="fas fa-eye" href="./resumen_cliente/<%= cliente.id_client %>" style="text-decoration: none;"></a>
+              <td>
+                <a
+                  class="fas fa-eye"
+                  href="./resumen_cliente/<%= cliente.id_client %>"
+                  style="text-decoration: none"
+                ></a>
               </td>
 
               <td>
                 <button
-				          class="btn btn-primary fas fa-edit"
+                  class="btn btn-primary fas fa-edit"
                   type="button"
                   data-bs-toggle="modal"
                   data-bs-target="#editModal<%= cliente.id_client %>"
                   data-bs-whatever="@fat"
-                > </button>
-				        <%- include("./partials/modal_edit.ejs", {cliente}) %> 
+                ></button>
+                <%- include("./partials/modal_edit_c.ejs", {cliente}) %>
               </td>
 
               <td>
-                <a class="fas fa-trash" href="/delete/<%= cliente.id_client %>"></a>
+                <a
+                  class="fas fa-trash"
+                  href="/delete/<%= cliente.id_client %>"
+                ></a>
               </td>
-
             </tr>
             <% } %>
-			
           </tbody>
         </table>
       </div>
     </main>
 
-	<footer>
-		<%- include("./partials/footer.ejs") %> 
-	</footer>
-    
+    <footer><%- include("./partials/footer.ejs") %></footer>
   </body>
 </html>

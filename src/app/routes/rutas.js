@@ -11,19 +11,16 @@ module.exports = (app) => {
   });
 
   app.get("/inicio", (req, res) => {
-    connection.query(
-      "SELECT * FROM tb_clients",
-      (err, result) => {
-        if (err) {
-          res.send("Something went wrong : (" + err);
-        } else {
-          res.render("../views/inicio.ejs", {
-            inventario: result,
-            position: req.session.position,
-          });
-        }
+    connection.query("SELECT * FROM tb_clients", (err, result) => {
+      if (err) {
+        res.send("Something went wrong : (" + err);
+      } else {
+        res.render("../views/inicio.ejs", {
+          inventario: result,
+          position: req.session.position,
+        });
       }
-    );
+    });
   });
 
   app.get("/delete/:id_client", (req, res) => {
@@ -43,45 +40,52 @@ module.exports = (app) => {
 
   app.get("/resumen_cliente/:id_client", (req, res) => {
     const id_client = req.params.id_client;
-    connection.query( "SELECT * FROM tb_clients WHERE id_client = ?", [id_client], (err, result) => {
+    connection.query(
+      "SELECT * FROM tb_clients WHERE id_client = ?",
+      [id_client],
+      (err, result) => {
         if (err) {
           res.send(err);
         } else {
           const client = result[0];
-          console.log(result)
+          console.log(result);
 
-          connection.query("SELECT * FROM tb_pets WHERE id_client = ?", [id_client], (err, result) =>{
-            let pets = []; 
-            if(result.length === 0 ){
-              pets.push({
-                id_pet: 1,
-                name_pet: "Sizas",
-                birth_date_pet: "Mera vuelta",
-                species: "La especie cucho",
-                race: "De raza"
-              });
-             } else {
+          connection.query(
+            "SELECT * FROM tb_pets WHERE id_client = ?",
+            [id_client],
+            (err, result) => {
+              let pets = [];
+              if (result.length === 0) {
+                pets.push({
+                  id_pet: 1,
+                  name_pet: "Sizas",
+                  birth_date_pet: "Mera vuelta",
+                  species: "La especie cucho",
+                  race: "De raza",
+                });
+              } else {
                 pets = result;
               }
-            
-            console.log(client);
-            console.log(pets);
 
-            res.render("../views/resumen_cliente.ejs", {
-              cliente: client,
-              pets: pets,
-              position: req.session.position,
-            });
-          });
+              console.log(client);
+              console.log(pets);
+
+              res.render("../views/resumen_cliente.ejs", {
+                cliente: client,
+                pets: pets,
+                position: req.session.position,
+              });
+            }
+          );
         }
-    });
+      }
+    );
   });
 
   app.get("/mascotas", (req, res) => {
     connection.query(
       "SELECT * FROM tb_pets JOIN tb_clients ON tb_clients.id_client = tb_pets.id_client",
       (err, result) => {
-        // console.log(result);
         if (err) {
           res.send("Something went wrong : (" + err);
         } else {
@@ -476,7 +480,7 @@ module.exports = (app) => {
     );
   });
 
-  app.post("/edit/:id_client", (req,res) => {
+  app.post("/inicio/:id_client", (req, res) => {
     const id_client = req.params.id_client;
     const {
       name_client,
@@ -487,17 +491,71 @@ module.exports = (app) => {
       email,
       address,
       tel,
-      cel
+      cel,
     } = req.body;
-    connection.query("UPDATE tb_clients SET name_client = ?, surname_client = ?, second_surname_client = ?, birth_date_client = ?, gender_client = ?, email = ?, address = ?, tel = ?, cel = ? WHERE id_client = ?", [name_client, surname_client, second_surname_client, birth_date_client, gender_client, email, address, tel, cel, id_client], (err, result) => {
-      if (err) {
-        res.send(err);        
-      } else {
-        res.redirect("/inicio")
+    connection.query(
+      "UPDATE tb_clients SET name_client = ?, surname_client = ?, second_surname_client = ?, birth_date_client = ?, gender_client = ?, email = ?, address = ?, tel = ?, cel = ? WHERE id_client = ?",
+      [
+        name_client,
+        surname_client,
+        second_surname_client,
+        birth_date_client,
+        gender_client,
+        email,
+        address,
+        tel,
+        cel,
+        id_client,
+      ],
+      (err, result) => {
+        if (err) {
+          res.send(err);
+        } else {
+          res.redirect("/inicio");
+        }
       }
-    })
-  })
-};
+    );
+  });
 
+  app.post("/mascotas/:id_pet", (req, res) => {
+    const id_pet = req.params.id_pet;
+    const {
+      chip,
+      name_pet,
+      last_name_pet,
+      birth_date_pet,
+      species,
+      race,
+      gender_pet,
+      reproductive_status,
+      deworming,
+      vaccination,
+      state_pet
+    } = req.body;
+    connection.query(
+      "UPDATE tb_pets SET chip = ?, name_pet = ?, last_name_pet = ?, birth_date_pet = ?, species = ?, race = ?, gender_pet = ?, reproductive_status = ?, deworming = ?, vaccination = ?, state_pet = ? WHERE id_pet = ?",
+      [
+        chip,
+        name_pet,
+        last_name_pet,
+        birth_date_pet,
+        species,
+        race,
+        gender_pet,
+        reproductive_status,
+        deworming,
+        vaccination,
+        state_pet
+      ],
+      (err, result) => {
+        if (err) {
+          res.send(err);
+        } else {
+          res.redirect("/mascotas");
+        }
+      }
+    );
+  });
+};
 
 //-------------------------------------------------//----------------------------------------------------//
