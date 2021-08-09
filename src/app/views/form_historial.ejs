@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('./partials/head') %> 
+    <title>Historial Clínico</title>
+    <link rel="stylesheet" href="/resources/css/estilosforms.css" />
+  </head>
 
-<head>
-  <%- include('./partials/head') %> 
-  <title>Historial Clínico</title>
-  <link rel="stylesheet" href="/resources/css/estilosforms.css" />
-</head>
-
-<body>
-  
+  <body>
   <header class="header">
     <%- include('./partials/header', {position: position}) %>
   </header>
 
-  <div class="container">
-    <div class="title">Historia Clínica</div>
+  <main class="container">
+    <h2 class="title">Historia Clínica</h2>
     <form action="/form_historial" method="POST">
       <div class="user-details">
 
         <div class="input-box">
           <label class="details" for="date_clinical_histories">Fecha</label>
           <input name="date_clinical_histories" type="date" required id="start" name="trip-start" min="1965-01-01" max="2021-12-31" />
-          <span></span>
-
         </div>
 
         <div class="input-box">
@@ -65,7 +61,8 @@
           <input type="text" name="behaviour" placeholder="" />
         </div>
 
-        <div class="title">Examen Físico General</div>
+        <h2 class="title">Examen Físico General</h2>
+        
         <div class="input-box">
           <label for="" class="details"></label>
         </div>
@@ -142,7 +139,9 @@
         <div class="input-box">
           <label for="" class="details"></label>
         </div>
-        <div class="title">Examen Físico Especial</div>
+
+        <h2 class="title">Examen Físico Especial</h2>
+
         <div class="input-box">
           <label for="" class="details"></label>
         </div>
@@ -304,9 +303,8 @@
           <input type="text" name="diagnostic_plan" placeholder="" />
         </div>
 
-        <!-- Formulario Tratamiento -->
+        <h2 class="title">Tratamiento</h2>
 
-        <div class="title">Tratamiento</div>
         <div class="input-box">
           <label for="" class="details"></label>
         </div>
@@ -324,25 +322,26 @@
 
       </div>
     </form>
-  </div>
-  <script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
+  </main>
 
-  <!--SWEET ALERT 2-->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <% if(typeof alert !="undefined" ) { %>
-    <script>
-      Swal.fire({
-        title: '<%= alertTitle %>',
-        text: '<%= alertMessage %>',
-        icon: '<%= alertIcon %>',
-        showConfirmButton: <%= showConfirmButton %>,
-        timer: <%= timer %>
-            }).then(() => {
-          window.location = '/<%=ruta%>'
-        })
-    </script>
-    <% } %>
+  <footer>
+    <%- include('./partials/footer') %>
+    <% if(typeof alert !="undefined" ) { %>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
+        Swal.fire({
+          title: '<%= alertTitle %>',
+          text: '<%= alertMessage %>',
+          icon: '<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+              }).then(() => {
+            window.location = '/<%=ruta%>'
+          })
+      </script>
+      <% } %>
+  </footer>
+  
 </body>
 
 </html>

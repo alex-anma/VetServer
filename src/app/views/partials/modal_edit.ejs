@@ -3,27 +3,73 @@
         <div class="modal-content">
           <div class="modal-header">
 
-            <h5 class="modal-title">Modal title</h5>
+            <h5 class="modal-title">Editar Informacion de <%= cliente.name_client %></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
           <div class="modal-body">
-            <form>
+            <form method="POST" action="/edit/<%= cliente.id_client %>">
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                <input type="text" class="form-control" id="recipient-name">
+                <label for="recipient-name" class="col-form-label">Documento ID:</label>
+                <input name="id_client" type="text" class="form-control" id="recipient-name" value="<%= cliente.id_client %>">
               </div>
-              <div class="mb-3">
-                <label for="message-text" class="col-form-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-            </form>
-          </div>
-          
 
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Nombres:</label>
+                <input name="name_client" type="text" class="form-control" id="message-text" value="<%= cliente.name_client %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="second_surname_client" class="col-form-label">Primer apellido:</label>
+                <input name="surname_client" type="text" class="form-control" id="message-text" value="<%= cliente.surname_client %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Segundo apellido:</label>
+                <input name="second_surname_client" type="text" class="form-control" id="message-text" value="<%= cliente.second_surname_client %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Fecha Nacimiento:</label>
+                <input name="birth_date_client" type="date" class="form-control" id="message-text" value="<%= cliente.birth_date_client %>">
+              </div>
+
+              <div class="input-box">
+                <label for="gender_client" class="details">Sexo:</label>
+                <select
+                class="select"
+                name="gender_client"
+                aria-label="Default select example">
+                <option selected>Seleccione una opción</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Prefiero no decir">Prefiero no decir</option>
+              </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Email:</label>
+                <input name="email" type="text" class="form-control" id="message-text" value="<%= cliente.email %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Dirección:</label>
+                <input name="address" type="text" class="form-control" id="message-text" value="<%= cliente.address %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Teléfono:</label>
+                <input name="tel" type="text" class="form-control" id="message-text" value="<%= cliente.tel %>">
+              </div>
+
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Celular:</label>
+                <input name="cel" type="text" class="form-control" id="message-text" value="<%= cliente.cel %>">
+              </div>
+
+              <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Editar Información">
+            </form>
           </div>
 
         </div>
