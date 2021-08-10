@@ -82,6 +82,26 @@ module.exports = (app) => {
     );
   });
 
+  app.get("/resumen_mascota/:id_pet", (req, res) => {
+    const id_pet = req.params.id_pet;
+    connection.query(
+      "SELECT * FROM tb_clients JOIN tb_pets ON tb_clients.id_client = tb_pets.id_client",
+      [id_pet],
+      (err, result) => {
+        if (err) {
+          res.send(err);
+        } if (err) {
+          res.send("Something went wrong : (" + err);
+        } else {
+          res.render("../views/resumen_mascota.ejs", {
+            inventario: result,
+            position: req.session.position,
+          });
+        }
+      }
+    );
+  });
+
   app.get("/mascotas", (req, res) => {
     connection.query(
       "SELECT * FROM tb_pets JOIN tb_clients ON tb_clients.id_client = tb_pets.id_client",
@@ -122,7 +142,7 @@ module.exports = (app) => {
     });
   });
 
-  app.get("/resumen_cliente", (req, res) => {
+/*   app.get("/resumen_cliente", (req, res) => {
     connection.query(
       "SELECT * FROM tb_clients JOIN tb_pets ON tb_clients.id_client = tb_pets.id_client",
       (err, result) => {
@@ -136,23 +156,8 @@ module.exports = (app) => {
         }
       }
     );
-  });
+  }); */
 
-  app.get("/resumen_mascota", (req, res) => {
-    connection.query(
-      "SELECT * FROM tb_clients JOIN tb_pets ON tb_clients.id_client = tb_pets.id_client",
-      (err, result) => {
-        if (err) {
-          res.send("Something went wrong : (" + err);
-        } else {
-          res.render("../views/resumen_mascota.ejs", {
-            inventario: result,
-            position: req.session.position,
-          });
-        }
-      }
-    );
-  });
   //solicitudes POST en el registro de usuario
   app.post("/form_usuario", async (req, res) => {
     const {
@@ -545,7 +550,8 @@ module.exports = (app) => {
         reproductive_status,
         deworming,
         vaccination,
-        state_pet
+        state_pet,
+        id_pet
       ],
       (err, result) => {
         if (err) {

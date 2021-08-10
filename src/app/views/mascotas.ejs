@@ -35,8 +35,8 @@
                 <th scope="col">Raza</th>
                 <th scope="col">Propietario</th>
                 <th scope="col">Estado</th>
-                <th scope="col">Editar</th>
                 <th scope="col">Detalles</th>
+                <th scope="col">Editar</th>
               </tr>
             </thead>
 
@@ -51,6 +51,13 @@
                 <td><%= pet.name_client %><%=pet.surname_client%></td>
                 <td><%= pet.state_pet %></td>
                 <td>
+                  <a
+                  class="fas fa-eye"
+                  href="./resumen_mascota/<%= pet.id_pet %>"
+                  style="text-decoration: none"
+                  ></a>
+                </td>
+                <td>
                   <button
                     class="btn btn-primary fas fa-edit"
                     type="button"
@@ -59,13 +66,6 @@
                     data-bs-whatever="@fat"
                   ></button>
                   <%- include("./partials/modal_edit_m.ejs", {pet}) %>
-                </td>
-                <td>
-                  <a
-                  class="fas fa-eye"
-                  href="./resumen_mascota/<%= pet.id_pet %>"
-                  style="text-decoration: none"
-                  ></a>
                 </td>
               </tr>
               <% } %>

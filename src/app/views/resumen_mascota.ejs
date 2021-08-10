@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/resources/css/estilosresumenmascotas.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/resources/css/estilosresumen.css">
     <link rel="stylesheet" href="/resources/css/estilosinicio.css">
-    <%- include('./partials/head') %>
     <title>Resumen Mascota</title>
 </head>
 
@@ -16,41 +17,43 @@
     </header>
 
     <main>
-        <section class="info">
-            <div class="info__pet">
-                <img src="/resources/images/user-circle.svg" alt="user">
-                <h2><%= inventario[0].name_pet %></h2>
-            </div>
-            <div class="info__table">
-                <table>
-                    <tr>
-                        <th>Numero de historia:</th>
-                        <td><%= inventario[0].id_pet %></td>
-                    </tr>
-                    <tr>
-                        <th>Especie:</td>
-                        <td><%= inventario[0].species %></td>
-                    </tr>
-                    <tr>
-                        <th>Raza:</th>
-                        <td><%= inventario[0].race %></td>
-                    </tr>
-                    <tr>
-                        <th>Sexo:</th>
-                        <td><%= inventario[0].gender_pet %></td>
-                    </tr>
-                    <tr>
-                        <th>Fecha de nacimiento:</th>
-                        <td><%= inventario[0].birth_date_pet %></td>
-                    </tr>
-                    <tr>
-                        <th>Estado reproductivo:</td>
-                        <td><%= inventario[0].reproductive_status %></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="pet">
-				<a class="client pet-add" href="./form_historial"><i class="fas fa-notes-medical add"></i>Añadir historial</a>
+        <section class="section">
+            <div class="section__info">
+                <div class="section__data">
+                    <img src="/resources/images/user-circle.svg" alt="user">
+                    <h2><%= inventario.name_pet %></h2>
+                </div>
+                <div class="section__table">
+                    <table>
+                        <tr>
+                            <th>Numero de historia:</th>
+                            <td><%= inventario.id_pet %></td>
+                        </tr>
+                        <tr>
+                            <th>Especie:</td>
+                            <td><%= inventario.species %></td>
+                        </tr>
+                        <tr>
+                            <th>Raza:</th>
+                            <td><%= inventario.race %></td>
+                        </tr>
+                        <tr>
+                            <th>Sexo:</th>
+                            <td><%= inventario.gender_pet %></td>
+                        </tr>
+                        <tr>
+                            <th>Fecha de nacimiento:</th>
+                            <td><%= inventario.birth_date_pet %></td>
+                        </tr>
+                        <tr>
+                            <th>Estado reproductivo:</td>
+                            <td><%= inventario.reproductive_status %></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="section__add">
+                    <a class="fas fa-eye" href="./form_historial"><i class="fas fa-notes-medical add"></i>Añadir historial</a>
+                </div>
             </div>
         </section>
 
@@ -77,13 +80,14 @@
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptatem id dignissimos.
                         </td>
                         <td>
-                            <a href="./historial_clinico"><i class="fas fa-eye"></i></a>
+                            <a class="fas fa-eye" href="./historial_clinico"></a>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
+
 	<script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
 </body>
 
