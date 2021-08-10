@@ -142,22 +142,6 @@ module.exports = (app) => {
     });
   });
 
-/*   app.get("/resumen_cliente", (req, res) => {
-    connection.query(
-      "SELECT * FROM tb_clients JOIN tb_pets ON tb_clients.id_client = tb_pets.id_client",
-      (err, result) => {
-        if (err) {
-          res.send("Something went wrong : (" + err);
-        } else {
-          res.render("../views/resumen_cliente.ejs", {
-            inventario: result,
-            position: req.session.position,
-          });
-        }
-      }
-    );
-  }); */
-
   //solicitudes POST en el registro de usuario
   app.post("/form_usuario", async (req, res) => {
     const {
