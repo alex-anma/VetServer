@@ -55,7 +55,8 @@
                 <a
                   class="fas fa-eye"
                   href="./resumen_cliente/<%= cliente.id_client %>"
-                  style="text-decoration: none"
+                  style="text-decoration: none;
+                  color: #00A54F;"
                 ></a>
               </td>
 
@@ -66,6 +67,9 @@
                   data-bs-toggle="modal"
                   data-bs-target="#editModal<%= cliente.id_client %>"
                   data-bs-whatever="@fat"
+                  style="background: none;
+                  border: none;
+                  color: #00A54F;"
                 ></button>
                 <%- include("./partials/modal_edit_c.ejs", {cliente}) %>
               </td>
@@ -74,6 +78,7 @@
                 <a
                   class="fas fa-trash"
                   href="/delete/<%= cliente.id_client %>"
+                  style="color: black;"
                 ></a>
               </td>
             </tr>

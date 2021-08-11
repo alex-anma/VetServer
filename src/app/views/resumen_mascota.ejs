@@ -26,7 +26,7 @@
                 <div class="section__table">
                     <table>
                         <tr>
-                            <th>Numero de historia:</th>
+                            <th>Id mascota:</th>
                             <td><%= inventario.id_pet %></td>
                         </tr>
                         <tr>
@@ -52,7 +52,7 @@
                     </table>
                 </div>
                 <div class="section__add">
-                    <a class="fas fa-eye" href="./form_historial"><i class="fas fa-notes-medical add"></i>Añadir historial</a>
+                    <a class="client" href="../form_historial/<%= inventario.id_pet %>"><i class="fas fa-notes-medical add"></i>Añadir historial</a>
                 </div>
             </div>
         </section>
@@ -80,7 +80,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam voluptatem id dignissimos.
                         </td>
                         <td>
-                            <a class="fas fa-eye" href="./historial_clinico"></a>
+                            <a class="fas fa-eye" href="./historial_clinico" style="text-decoration: none; color: #00A54F;"></a>
                         </td>
                     </tr>
                 </tbody>

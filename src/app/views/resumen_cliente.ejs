@@ -47,7 +47,7 @@
                     </table>
                 </div>        
                 <div class="section__add">
-                    <a class="client" href="../form_mascota<%= cliente.id_pet %>"><i class="fas fa-paw add"></i>Añadir mascota</a>
+                    <a class="client" href="../form_mascota/<%= cliente.id_pet %>"><i class="fas fa-paw add"></i>Añadir mascota</a>
                 </div>
             </div>
         </section>
@@ -66,16 +66,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="hover">
-                        <% for(let pet of pets) {%>
+                    <% for(let pet of pets) {%>
+                        <tr class="hover">
                             <td><%= pet.id_pet %></td>
                             <td><%= pet.name_pet %></td>
                             <td><%= pet.birth_date_pet %></td>
                             <td><%= pet.species %></td>
                             <td><%= pet.race %></td>
-                            <td><a class="fas fa-eye" href="./historial_clinico"></a></td>
+                            <td><a class="fas fa-eye" href="../resumen_mascota/<%= pet.id_pet %>" style="text-decoration: none; color: #00A54F;"></a></td>
+                        </tr>
                         <% } %>  
-                    </tr>
                 </tbody>
             </table>
         </section>

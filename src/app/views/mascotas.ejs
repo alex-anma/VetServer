@@ -54,7 +54,8 @@
                   <a
                   class="fas fa-eye"
                   href="./resumen_mascota/<%= pet.id_pet %>"
-                  style="text-decoration: none"
+                  style="text-decoration: none;
+                  color: #00A54F;"
                   ></a>
                 </td>
                 <td>
@@ -64,6 +65,9 @@
                     data-bs-toggle="modal"
                     data-bs-target="#editModal<%= pet.id_pet %>"
                     data-bs-whatever="@fat"
+                    style="background: none;
+                    border: none;
+                    color: #00A54F;"
                   ></button>
                   <%- include("./partials/modal_edit_m.ejs", {pet}) %>
                 </td>

@@ -105,5 +105,10 @@ CREATE TABLE tb_histories (
     treatment VARCHAR(250),
     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     id_pet INT
+    FOREIGN KEY (id_pet) REFERENCES tb_pets(id_pet);
 );
 
+/* Agregar claves foraneas */
+ALTER TABLE tb_histories
+ADD CONSTRAINT id_pet
+FOREIGN KEY (id_pet) REFERENCES tb_pets(id_pet);

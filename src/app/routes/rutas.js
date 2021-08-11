@@ -54,22 +54,7 @@ module.exports = (app) => {
             "SELECT * FROM tb_pets WHERE id_client = ?",
             [id_client],
             (err, result) => {
-              let pets = [];
-              if (result.length === 0) {
-                pets.push({
-                  id_pet: 1,
-                  name_pet: "Sizas",
-                  birth_date_pet: "Mera vuelta",
-                  species: "La especie cucho",
-                  race: "De raza",
-                });
-              } else {
-                pets = result;
-              }
-
-              console.log(client);
-              console.log(pets);
-
+              let pets = result;
               res.render("../views/resumen_cliente.ejs", {
                 cliente: client,
                 pets: pets,
@@ -137,8 +122,16 @@ module.exports = (app) => {
   });
 
   app.get("/form_historial", (req, res) => {
-    res.render("../views/form_historial.ejs", {
-      position: req.session.position,
+    connection.query("SELECT * FROM tb_histories", (err, result) => {
+      if (err) {
+        res.send("Something went wrong : (" + err);
+      } else {
+        connection.query("SELECT * FROM tb_pets")
+        res.render("../views/form_historial.ejs", {
+          inventario: result,
+          position: req.session.position,
+        });
+      }
     });
   });
 
