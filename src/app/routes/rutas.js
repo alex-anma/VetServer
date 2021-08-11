@@ -21,32 +21,6 @@ module.exports = (app) => {
         });
       }
     });
-/*     const id_client = req.params.id_client;
-    connection.query(
-      "SELECT * FROM tb_clients",
-      [id_client],
-      (err, result) => {
-        if (err) {
-          res.send(err);
-        } else {
-          const client = result[0];
-          console.log(result);
-          connection.query(
-            "SELECT * FROM tb_pets",
-            [id_client],
-            (err, result) => {
-              const pets = result[0];
-              let info = [client, pets];
-              console.log(info);
-              res.render("../views/inicio.ejs", {
-                info: info,
-                position: req.session.position,
-              });
-            }
-          );
-        }
-      }
-    ); */
   });
 
   app.get("/delete/:id_client", (req, res) => {

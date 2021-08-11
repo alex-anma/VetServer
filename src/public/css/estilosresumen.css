@@ -22,13 +22,31 @@
     border-radius: 10px;
 }
 
+.section__data {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .section__data img {
-    width: 250px;
+    width: 200px;
+}
+
+.section__table table th {
+    display: flex;
+    justify-content: start;
+    font-size: 20px;
+    padding: 32px 136px 0 0;
+}
+
+.section__table table td {
+    font-size: 18px;
+    padding: 32px 136px 0 0;
 }
 
 .section__add {
     position: absolute;
-    right: 75px;
+    right: 50px;
     top: 95px;
 }
 
