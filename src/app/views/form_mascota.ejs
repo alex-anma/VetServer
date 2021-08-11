@@ -15,7 +15,6 @@
       <h2 class="title">Ingrese Datos Mascota</h2>
       <form action="/form_mascota" method="POST">
         <div class="user-details">
-
           <div class="input-box">
             <label class="details" for="id_client">ID del cliente</label>
             <input
@@ -67,7 +66,7 @@
               name="species"
               aria-label="Default select example"
             >
-              <option selected>Seleccione una opción</option>
+              <option disabled selected>Seleccione una opción</option>
               <option value="canino">Canino</option>
               <option value="felino">Felino</option>
               <option value="otro">Otro</option>
@@ -86,28 +85,33 @@
               name="gender_pet"
               aria-label="Default select example"
             >
-              <option selected>Seleccione una opción</option>
+              <option disabled selected>Seleccione una opción</option>
               <option value="hembra">Hembra</option>
               <option value="macho">Macho</option>
             </select>
           </div>
 
           <div class="input-box">
-            <label class="details" for="reproductive_status">Estado reproductivo</label>
+            <label class="details" for="reproductive_status"
+              >Estado reproductivo</label
+            >
             <select
               class="select"
               name="reproductive_status"
               aria-label="Default select example"
             >
-              <option selected>Seleccione una opción</option>
+              <option disabled selected>Seleccione una opción</option>
               <option value="entero">Entero</option>
               <option value="esterilizado">Esterilizado</option>
             </select>
           </div>
 
           <div class="input-box">
-            <label class="details" for="deworming">Fecha de desparasitación</label>
+            <label class="details" for="deworming"
+              >Fecha de desparasitación</label
+            >
             <input
+              required
               name="deworming"
               type="date"
               id="start"
@@ -119,6 +123,7 @@
           <div class="input-box">
             <label class="details" for="vaccination">Fecha de vacunación</label>
             <input
+              required
               name="vaccination"
               type="date"
               id="start"
@@ -134,7 +139,7 @@
               name="state_pet"
               aria-label="Default select example"
             >
-              <option selected>Seleccione una opción</option>
+              <option disabled selected>Seleccione una opción</option>
               <option value="vivo">Vivo</option>
               <option value="fallecido">Fallecido</option>
             </select>
@@ -146,14 +151,13 @@
             id="buttonr"
             value="Registrar Historia Clínica"
           />
-          
         </div>
       </form>
     </main>
 
     <footer>
-      <%- include("./partials/footer.ejs") %>
-      <% if(typeof alert != "undefined"){ %>
+      <%- include("./partials/footer.ejs") %> <% if(typeof alert !=
+      "undefined"){ %>
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script>
         const alerta = {

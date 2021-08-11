@@ -21,38 +21,42 @@
             <div class="section__info">
                 <div class="section__data">
                     <img src="/resources/images/user-circle.svg" alt="user">
-                    <h2><%= inventario.name_pet %></h2>
+                    <h2><%= pets.name_pet %></h2>
                 </div>
                 <div class="section__table">
                     <table>
                         <tr>
-                            <th>Id mascota:</th>
-                            <td><%= inventario.id_pet %></td>
+                            <th class="up">Id mascota:</th>
+                            <td><%= pets.id_pet %></td>
                         </tr>
                         <tr>
-                            <th>Especie:</td>
-                            <td><%= inventario.species %></td>
+                            <th class="down">Chip:</th>
+                            <td><%= pets.chip %></td>
                         </tr>
                         <tr>
-                            <th>Raza:</th>
-                            <td><%= inventario.race %></td>
+                            <th class="down">Especie:</td>
+                            <td><%= pets.species %></td>
                         </tr>
                         <tr>
-                            <th>Sexo:</th>
-                            <td><%= inventario.gender_pet %></td>
+                            <th class="down">Raza:</th>
+                            <td><%= pets.race %></td>
                         </tr>
                         <tr>
-                            <th>Fecha de nacimiento:</th>
-                            <td><%= inventario.birth_date_pet %></td>
+                            <th class="down">Sexo:</th>
+                            <td><%= pets.gender_pet %></td>
                         </tr>
                         <tr>
-                            <th>Estado reproductivo:</td>
-                            <td><%= inventario.reproductive_status %></td>
+                            <th class="down">Fecha de nacimiento:</th>
+                            <td><%= pets.birth_date_pet %></td>
+                        </tr>
+                        <tr>
+                            <th class="down">Estado reproductivo:</td>
+                            <td><%= pets.reproductive_status %></td>
                         </tr>
                     </table>
                 </div>
                 <div class="section__add">
-                    <a class="client" href="../form_historial/<%= inventario.id_pet %>"><i class="fas fa-notes-medical add"></i>Añadir historial</a>
+                    <a class="client" href="../form_historial/<%= pets.id_pet %>"><i class="fas fa-notes-medical add"></i>Añadir historial</a>
                 </div>
             </div>
         </section>

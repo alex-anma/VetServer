@@ -70,18 +70,27 @@ module.exports = (app) => {
   app.get("/resumen_mascota/:id_pet", (req, res) => {
     const id_pet = req.params.id_pet;
     connection.query(
-      "SELECT * FROM tb_clients JOIN tb_pets ON tb_clients.id_client = tb_pets.id_client",
+      "SELECT * FROM tb_pets WHERE id_pet = ?",
       [id_pet],
       (err, result) => {
         if (err) {
           res.send(err);
-        } if (err) {
-          res.send("Something went wrong : (" + err);
         } else {
-          res.render("../views/resumen_mascota.ejs", {
-            inventario: result,
-            position: req.session.position,
-          });
+          const pets = result[0];
+          console.log(result);
+
+          connection.query(
+            "SELECT * FROM tb_histories WHERE id_pet = ?",
+            [id_pet],
+            (err, result) => {
+              let histories = result;
+              res.render("../views/resumen_mascota.ejs", {
+                pets: pets,
+                histories: histories,
+                position: req.session.position,
+              });
+            }
+          );
         }
       }
     );

@@ -118,13 +118,11 @@ body {
     border-bottom-width: 2px;
 }
 
-.select:focus,
-.select:valid{
+.select:focus {
 	border-color: var(--color-primary);
 }
 
-.user-details .input-box input:focus,
-.user-details .input-box input:valid{
+.user-details .input-box input:focus {
 	border-color: var(--color-primary);
 }
 
