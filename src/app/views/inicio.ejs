@@ -32,10 +32,10 @@
             <tr>
               <th scope="col">Documento del propietario</th>
               <th scope="col">Nombre del propietario</th>
-              <th scope="col">Id del paciente</th>
-              <th scope="col">Nombre del paciente</th>
-              <th scope="col">Raza</th>
-              <th scope="col">Genero</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Celular</th>
               <th scope="col">Detalles</th>
               <th scope="col">Editar</th>
               <th scope="col">Borrar</th>
@@ -47,10 +47,10 @@
             <tr class="hover">
               <td><%= cliente.id_client %></td>
               <td><%= cliente.name_client %> <%= cliente.surname_client %></td>
-              <td><%= cliente.id_pet %></td>
-              <td><%= cliente.name_pet %></td>
-              <td><%= cliente.race %></td>
-              <td><%= cliente.gender_pet %></td>
+              <td><%= cliente.address %></td>
+              <td><%= cliente.email %></td>
+              <td><%= cliente.tel%></td>
+              <td><%= cliente.cel %></td>
               <td>
                 <a
                   class="fas fa-eye"
