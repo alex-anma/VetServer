@@ -73,6 +73,23 @@ module.exports = (app) => {
   });
 
   app.get("/resumen_mascota/:id_pet", (req, res) => {
+    /* const pets = req.params.id_clinical_histories
+    connection.query("SELECT * FROM tb_pets WHERE id_pet", (err, result) => {
+      [pets]
+      if (err) {
+        res.send(err)
+      } else {
+        const pets = result[0]
+        res.render("../views/resumen_mascota.ejs", {
+          pets: pets,
+          position: req.session.position,
+        });
+      }
+    }) */
+
+
+
+
     const id_pet = req.params.id_pet;
     connection.query(
       "SELECT * FROM tb_pets WHERE id_pet = ?",
@@ -143,6 +160,22 @@ module.exports = (app) => {
     res.render("../views/form_historial.ejs", {
       position: req.session.position,
     });
+  });
+
+  app.get("/historial/:id_pet", (req, res) => {
+    const histories = req.params.id_clinical_histories
+    connection.query("SELECT * FROM tb_histories, tb_pets WHERE id_clinical_histories", (err, result) => {
+      [histories]
+      if (err) {
+        res.send(err)
+      } else {
+        const histories = result[0]
+        res.render("../views/historial.ejs", {
+          histories: histories,
+          position: req.session.position,
+        });
+      }
+    })
   });
 
   //solicitudes POST en el registro de usuario
