@@ -55,12 +55,16 @@ module.exports = (app) => {
             "SELECT * FROM tb_pets WHERE id_client = ?",
             [id_client],
             (err, result) => {
-              let pets = result;
-              res.render("../views/resumen_cliente.ejs", {
-                cliente: client,
-                pets: pets,
-                position: req.session.position,
-              });
+              if (err) {
+                console.log(err);
+              } else {
+                let pets = result;
+                res.render("../views/resumen_cliente.ejs", {
+                  cliente: client,
+                  pets: pets,
+                  position: req.session.position,
+                });
+              }
             }
           );
         }
@@ -84,12 +88,16 @@ module.exports = (app) => {
             "SELECT * FROM tb_histories WHERE id_pet = ?",
             [id_pet],
             (err, result) => {
-              let histories = result;
-              res.render("../views/resumen_mascota.ejs", {
-                pets: pets,
-                histories: histories,
-                position: req.session.position,
-              });
+              if (err) {
+                console.log(err);
+              } else {
+                let histories = result;
+                res.render("../views/resumen_mascota.ejs", {
+                  pets: pets,
+                  histories: histories,
+                  position: req.session.position,
+                });
+              }
             }
           );
         }
