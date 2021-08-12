@@ -106,21 +106,23 @@
             <input type="text" name="cel" placeholder="Celular" required />
           </div>
 
-          <input
-            class="buttonm"
-            type="submit"
-            id="buttonm"
-            value="Registrar y Agregar Mascota"
-          />
+          <div>
+            <input
+              class="buttonm"
+              type="submit"
+              id="buttonm"
+              value="Registrar y Agregar Mascota"
+            />
+          </div>
         </div>
       </form>
     </main>
 
     <footer>
-      <%- include("./partials/footer.ejs") %> 
-      <% if(typeof alert != "undefined") { %>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script>
+      <%- include("./partials/footer.ejs") %> <% if(typeof alert != "undefined")
+      { %>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script>
         const alerta = {
             title: '<%= alertTitle %>',
             text: '<%= alertMessage %>',
@@ -130,9 +132,8 @@
           };
           Swal.fire(alerta)
             .then(() => {window.location = '/<%=ruta%>'});
-        </script>
+      </script>
       <% } %>
     </footer>
-    
   </body>
 </html>

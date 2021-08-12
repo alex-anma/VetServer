@@ -15,24 +15,24 @@
 
     <main class="main_content">
       <section class="box">
-        <div class="element">
+<!--         <div class="element">
           <div class="search-box">
             <label for="search" class="icon">
               <input id="search" type="text" placeholder="Busqueda..." />
               <i class="fas fa-search buscar"></i>
             </label>
-          </div>
+          </div> -->
         </div>
 
         <div>
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Chip</th>
-                <th scope="col">Fecha última consulta</th>
+                <th scope="col">Id</th>
                 <th scope="col">Nombre de mascota</th>
-                <th scope="col">Especie</th>
-                <th scope="col">Raza</th>
+                <th scope="col">Chip</th>
+                <th scope="col">Tipo (Raza)</th>
+                <th scope="col">Fecha de nacimiento</th>
                 <th scope="col">Propietario</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Detalles</th>
@@ -43,11 +43,11 @@
             <tbody>
               <% for(let pet of inventario) { %>
               <tr class="hover">
-                <td><%= pet.chip %></td>
-                <td><%= pet.date_created %></td>
+                <td><%= pet.id_pet %></td>
                 <td><%= pet.name_pet %> <%= pet.last_name_pet%></td>
-                <td><%= pet.species %></td>
-                <td><%= pet.race %></td>
+                <td><%= pet.chip %></td>
+                <td><%= pet.race %> (<%= pet.species %>)</td>
+                <td><%= pet.birth_date_pet %></td>
                 <td><%= pet.name_client %><%=pet.surname_client%></td>
                 <td><%= pet.state_pet %></td>
                 <td>

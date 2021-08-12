@@ -17,8 +17,8 @@
       <div class="user-details">
 
         <div class="input-box">
-          <label class="details" for="date_clinical_histories">Id mascota</label>
-          <input value="<%= inventario.id_pet %>" name="date_clinical_histories" type="text" required id="start" name="trip-start" min="1965-01-01" max="2021-12-31" />
+          <label class="details" for="id_pet">Id mascota</label>
+          <input name="id_pet" type="text" required id="start" name="trip-start" min="1965-01-01" max="2021-12-31" />
         </div>
 
         <div class="input-box">
@@ -66,11 +66,7 @@
           <input type="text" name="behaviour" placeholder="" />
         </div>
 
-        <h2 class="title">Examen Físico General</h2>
-        
-        <div class="input-box">
-          <label for="" class="details"></label>
-        </div>
+        <div class="subtitle"><h2>Examen Físico General</h2></div>
 
         <div class="input-box">
           <label for="weight" class="details">Peso (kg)</label>
@@ -145,11 +141,7 @@
           <label for="" class="details"></label>
         </div>
 
-        <h2 class="title">Examen Físico Especial</h2>
-
-        <div class="input-box">
-          <label for="" class="details"></label>
-        </div>
+        <div class="subtitle"><h2>Examen Físico Especial</h2></div>
 
         <div class="input-box">
           <label for="hydration" class="details">Hidratación</label>
@@ -308,11 +300,7 @@
           <input type="text" name="diagnostic_plan" placeholder="" />
         </div>
 
-        <h2 class="title">Tratamiento</h2>
-
-        <div class="input-box">
-          <label for="" class="details"></label>
-        </div>
+        <div class="subtitle"><h2>Tratamiento</h2></div>
 
         <div class="input-box">
           <label for="treatment" class="details">Tratamiento</label>
@@ -323,8 +311,9 @@
           <label for="" class="details"></label>
         </div>
 
+        <div>
         <input class="buttonm" type="submit" id="buttonm" value="Guardar" />
-
+      </div>
       </div>
     </form>
   </main>

@@ -1,5 +1,6 @@
 const bcryptjs = require("bcryptjs");
 const connection = require("../../config/db");
+const dateTransformer = require("../utils/date_transform");
 
 module.exports = (app) => {
   app.get("/", (req, res) => {
@@ -124,23 +125,15 @@ module.exports = (app) => {
     });
   });
 
-  app.get("/form_mascota", (req, res) => {
+  app.get("/form_mascota/:id_client", (req, res) => {
     res.render("../views/form_mascota.ejs", {
       position: req.session.position,
     });
   });
 
-  app.get("/form_historial", (req, res) => {
-    connection.query("SELECT * FROM tb_histories", (err, result) => {
-      if (err) {
-        res.send("Something went wrong : (" + err);
-      } else {
-        connection.query("SELECT * FROM tb_pets")
-        res.render("../views/form_historial.ejs", {
-          inventario: result,
-          position: req.session.position,
-        });
-      }
+  app.get("/form_historial/:id_pet", (req, res) => {
+    res.render("../views/form_historial.ejs", {
+      position: req.session.position,
     });
   });
 
@@ -334,7 +327,7 @@ module.exports = (app) => {
             alertIcon: "success",
             showConfirmButton: false,
             timer: 1500,
-            ruta: "form_historial",
+            ruta: "inicio",
           });
         }
       }
@@ -395,6 +388,7 @@ module.exports = (app) => {
       differential_diagnoses,
       diagnostic_plan,
       treatment,
+      id_pet,
     } = req.body;
     connection.query(
       "INSERT INTO tb_histories SET ?",
@@ -451,6 +445,7 @@ module.exports = (app) => {
         differential_diagnoses: differential_diagnoses,
         diagnostic_plan: diagnostic_plan,
         treatment: treatment,
+        id_pet,
       },
       async (error, results) => {
         if (error) {
@@ -521,7 +516,7 @@ module.exports = (app) => {
       reproductive_status,
       deworming,
       vaccination,
-      state_pet
+      state_pet,
     } = req.body;
     connection.query(
       "UPDATE tb_pets SET chip = ?, name_pet = ?, last_name_pet = ?, birth_date_pet = ?, species = ?, race = ?, gender_pet = ?, reproductive_status = ?, deworming = ?, vaccination = ?, state_pet = ? WHERE id_pet = ?",
@@ -537,7 +532,7 @@ module.exports = (app) => {
         deworming,
         vaccination,
         state_pet,
-        id_pet
+        id_pet,
       ],
       (err, result) => {
         if (err) {

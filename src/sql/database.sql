@@ -112,3 +112,9 @@ CREATE TABLE tb_histories (
 ALTER TABLE tb_histories
 ADD CONSTRAINT id_pet
 FOREIGN KEY (id_pet) REFERENCES tb_pets(id_pet);
+
+
+ALTER TABLE tb_histories MODIFY id_pet INT NOT NULL;
+
+
+ALTER TABLE tb_histories DROP FOREIGN KEY id_pet;
