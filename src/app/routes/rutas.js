@@ -315,7 +315,7 @@ module.exports = (app) => {
             alertIcon: "success",
             showConfirmButton: false,
             timer: 1500,
-            ruta: "form_mascota",
+            ruta: "inicio",
           });
         }
       }
