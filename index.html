@@ -1,73 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vetserver</title>
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Vetserver</title>
-	<link rel="stylesheet" href="main.css">
-</head>
+  <body>
+    <header class="hero">
+      <div class="hamburger">
+        <div class="_layer -top"></div>
+        <div class="_layer -mid"></div>
+        <div class="_layer -bottom"></div>
+      </div>
+      <nav class="menuppal">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Vetserver</a></li>
+        </ul>
+        <script>
+          let menu = document.querySelector(".hamburger");
+          function toggleMenu(event) {
+            this.classList.toggle("is-active");
+            document.querySelector(".menuppal").classList.toggle("is_active");
+            event.preventDefault();
+          }
+          menu.addEventListener("click", toggleMenu, false);
+        </script>
+      </nav>
+      <nav class="nav">
+        <a href="../inicio" class="nav__items"
+          ><i class="fas fa-user"></i> Inicio</a
+        >
+        <a href="../mascotas" class="nav__items"
+          ><i class="fas fa-paw"></i> Vetserver</a
+        >
+      </nav>
+      <div class="container">
+        <section class="hero__container">
+          <div class="hero__texts">
+            <h1 class="hero__title">Vetserver</h1>
+            <h2 class="hero__subtitle">Tus datos en las mejores manos.</h2>
+          </div>
+        </section>
+      </div>
+    </header>
 
-<body>
-	<header class="hero">
-		<div class="respmenu">
-			<input type="checkbox">
-			<i class="fas fa-bars"></i>
-			<i class="fas fa-times"></i>
-			<nav>
-				<a href="#" class="nav__items"><i class="home"></i>Inicio</a>
-				<a href="#nosotros" class="nav__items"><i class="services"></i>Vetserver</a>
-			</nav>
-		</div>
-		<nav class="nav">
-			<a href="#" class="nav__items"><i class="home"></i>Inicio</a>
-			<a href="#nosotros" class="nav__items"><i class="services"></i>Vetserver</a>
-		</nav>
-		<div class="container">
-			<section class="hero__container">
-				<div class="hero__texts">
-					<h1 class="hero__title">Vetserver</h1>
-					<h2 class="hero__subtitle">Centro Veterinaria Villa Paula, es una clínica veterinaria dedicada a
-						ofrecer atención con calidad para los consentidos de casa: las mascotas.</h2>
-				</div>
-			</section>
-		</div>
-	</header>
+    <main>
+      <section id="nosotros" class="we-container">
+        <div class="we__description">
+          <img
+            src="././elementos/images/LogoVetServer.png"
+            alt="Vetserver"
+            class="we__img"
+          />
+          <div class="we__text">
+            <p class="we__p">
+              En VetServer sabemos lo complicado que puede ser el manejo de
+              información de un centro veterinario en crecimiento, tener el
+              almacenamiento de información de clientes, mascotas e historial
+              clínico de forma adecuada puede ser complejo y tedioso de manejar.
+              Por esto nuestro proyecto Vetserver está enfocado en el desarrollo
+              de un aplicativo web que apoye el Centro Veterinario Villa Paula,
+              el cual sea accesible, práctico y visualmente atractivo; el
+              aplicativo web cuenta con una página principal que sea accesible
+              para todos los clientes donde puedan encontrar toda la información
+              básica de la veterinaria y cuenta con un apartado solo para el
+              ingreso del personal del centro veterinario donde podrán almacenar
+              toda la información que requieren y será establecida completamente
+              en formato digital.
+            </p>
+            <h2 class="we__sub-title">Especificaciones del aplicativo</h2>
+            <h3 class="we__sub-title">
+              Las tecnologías que fueron usadas para el desarrollo:
+            </h3>
+            <ul>
+              <li><b>Lenguaje de programación:</b> Java script</li>
+              <li><b>Lenguaje de marcado:</b> HTML</li>
+              <li><b>Lenguaje de hojas de estilo en cascada:</b> CSS</li>
+              <li><b>Base de datos:</b> Mysql</li>
+              <li><b>Conexión servdior:</b> Node Js</li>
+              <li><b>Repositorio en la nube:</b> Heroku</li>
+              <li><b>Sistema de control de versiones:</b> GitHub</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
 
-	<main>
-		<section id="nosotros" class="we container">
-			<h2 class="subtitle">Vetserver</h2>
-			<div class="we__grid">
-				<article class="we__item">
-					<div class="we__description">
-						<img src=".//Villa Paula1.png" alt="villaPaula" class="we__img">
-						<div class="we__text">
-							<h3 class="we__name">Villa Paula Veterinaria</h3>
-							<p class="we__text">Somos una empresa comprometida con el cuidado de las mascotas, brindando
-								servicios de medicina veterinaria, estética como peluquería, venta de medicamentos y
-								servicio a domicilio; llevamos más de 20 años en el mercado. Contamos con una amplia
-								experiencia y con un gran interés en sus mascotas, ayudándoles a la necesidad que
-								soliciten con una atención muy acorde a las expectativas de nuestros clientes.</p>
-							<p class="we__text">Somos una empresa comprometida con el cuidado de las mascotas, brindando
-								servicios de medicina veterinaria, estética como peluquería, venta de medicamentos y
-								servicio a domicilio; llevamos más de 20 años en el mercado. Contamos con una amplia
-								experiencia y con un gran interés en sus mascotas, ayudándoles a la necesidad que
-								soliciten con una atención muy acorde a las expectativas de nuestros clientes.</p>
-								
-						</div>
-					</div>
-				</article>
-			</div>
-
-		</section>
-		</div class="social-wpp">
-		<a href="https://wa.link/16wtiu" class="wpp icon-whatsapp" target="_blank">
-			<i class="fab fa-whatsapp"></i>
-		</a>
-		</div>
-	</main>
-
-	<script src="https://kit.fontawesome.com/7d3e6d734e.js" crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/7d3e6d734e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
