@@ -59,7 +59,7 @@ body {
 
 .hero {
   height: 100vh;
-  background-image: url("../Elementos/Images/pets1.jpg");
+  background-image: url("https://images.pexels.com/photos/3714060/pexels-photo-3714060.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
