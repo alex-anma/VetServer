@@ -11,6 +11,7 @@ html {
 body {
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
+  margin: 0;
 }
 
 .nav {
@@ -128,7 +129,7 @@ body {
 
 .hero__title {
   color: #00a54f;
-  font-size: 5	rem;
+  font-size: 5rem;
 }
 
 .hero__subtitle {
@@ -320,97 +321,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* footer */
-
-.footer {
-  background: #111;
-  height: auto;
-  width: 100%;
-  color: #fff;
-}
-
-.footer__text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.footer__text h3 {
-  font-size: 1.8rem;
-  font-weight: 400;
-  text-transform: capitalize;
-  line-height: 3rem;
-}
-
-.footer__text p,
-.footer__text p a {
-  color: white;
-  max-height: 500px;
-  margin: 10px auto;
-  line-height: 28px;
-  font-size: 14px;
-}
-
-.footer__contact i {
-  margin-right: 5px;
-}
-
-.footer__contact a {
-  text-decoration: none;
-}
-
-.socials {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  padding: 0;
-}
-
-.socials li {
-  margin: 0 10px;
-}
-
-.socials a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.socials li a {
-  font-size: 1.1rem;
-  transition: color 0.4s ease;
-}
-
-.socials li a:hover {
-  color: #667eea;
-}
-
-.wpp {
-  position: fixed;
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
-  bottom: 30px;
-  right: 30px;
-  background: #25d366;
-  color: white;
-  border-radius: 50px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 30px;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-}
-
-.wpp:hover {
-  text-decoration: none;
-  color: #25d366;
-  background: white;
-}
-
 .respmenu {
   display: none;
 }
+
